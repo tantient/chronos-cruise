@@ -1,9 +1,8 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 
+import { pageSeo } from "@/lib/seo";
 import { ServicePage } from "@/components/services/ServicePage";
 import { getService, serviceImages } from "@/components/services/services-data";
-
-const SITE_URL = "https://id-preview--aaae7898-8e56-433d-9dbd-cdc3c97aac11.lovable.app";
 
 export const Route = createFileRoute("/services/$serviceId")({
   loader: ({ params }) => {
@@ -11,31 +10,18 @@ export const Route = createFileRoute("/services/$serviceId")({
     if (!service) throw notFound();
     return { service };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Unavailable" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Không tìm thấy dịch vụ | Chronos Cruise" }, { name: "robots", content: "noindex" }] };
     }
     const { service } = loaderData;
-    const title = `${service.nameEn} | Chronos Cruise`;
-    const desc = service.introEn.slice(0, 155);
     const hero = serviceImages(service)[0];
-    const image = hero ? `${SITE_URL}${hero.src}` : undefined;
-    return {
-      meta: [
-        { title },
-        { name: "description", content: desc },
-        { property: "og:title", content: title },
-        { property: "og:description", content: desc },
-        { property: "og:type", content: "website" },
-        ...(image
-          ? [
-              { property: "og:image", content: image },
-              { name: "twitter:image", content: image },
-            ]
-          : []),
-        { name: "twitter:card", content: "summary_large_image" },
-      ],
-    };
+    return pageSeo({
+      title: `${service.nameEn} | Chronos Cruise`,
+      description: service.introEn.slice(0, 155),
+      path: `/services/${params.serviceId}`,
+      image: hero?.src,
+    });
   },
   component: ServiceRoute,
 });
