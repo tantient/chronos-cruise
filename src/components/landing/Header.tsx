@@ -78,7 +78,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
         <Link to="/" className="flex items-center">
           <ZenovaLogo
             showTagline={false}
-            className={`h-8 text-[13px] transition-colors ${scrolled ? "text-zenova-ink" : "text-zenova-ivory"}`}
+            className={`h-8 text-[13px] transition-colors ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`}
             aria-label="Zenova Cruise"
           />
         </Link>
