@@ -45,7 +45,7 @@ export function Footer({ t }: FooterProps) {
             variant="stacked"
             showTagline={false}
             size="md"
-            className="text-chronos-sand-900"
+            tone="auto"
             aria-label="Chronos Cruise"
           />
 

@@ -79,7 +79,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
           <ChronosLogo
             showTagline={false}
             size="md"
-            className={`transition-colors ${scrolled ? "text-chronos-sand-900" : "text-chronos-ivory"}`}
+            tone={scrolled ? "auto" : "onDark"}
             aria-label="Chronos Cruise"
           />
         </Link>
