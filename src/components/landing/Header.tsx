@@ -58,8 +58,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
   ];
 
   const linkClasses = scrolled
-    ? "text-zenova-ink/75 hover:text-zenova-ink"
+    ? "text-zenova-sand-900/75 hover:text-zenova-sand-900"
     : "text-zenova-ivory/90 hover:text-zenova-ivory";
+
+  const scrolledText = scrolled ? "text-zenova-sand-900" : "text-zenova-ivory";
 
   const dropdownLinkClasses =
     "block rounded-sm px-3 py-2 transition-colors hover:bg-zenova-ink/5";
@@ -76,7 +78,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
         <Link to="/" className="flex items-center">
           <ZenovaLogo
             showTagline={false}
-            className={`h-8 text-[13px] transition-colors ${scrolled ? "text-zenova-ink" : "text-zenova-ivory"}`}
+            className={`h-8 text-[13px] transition-colors ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`}
             aria-label="Zenova Cruise"
           />
         </Link>
@@ -159,7 +161,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
         <div className="hidden items-center gap-3 md:flex">
           <div
             className={`flex items-center rounded-full border p-1 ${
-              scrolled ? "border-zenova-ink/20" : "border-zenova-ivory/30"
+              scrolled ? "border-zenova-sand-900/20" : "border-zenova-ivory/30"
             }`}
           >
             <button
@@ -167,10 +169,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                 lang === "vi"
                   ? scrolled
-                    ? "bg-zenova-ink text-zenova-ivory"
-                    : "bg-zenova-ivory text-zenova-ink"
+                    ? "bg-zenova-sand-900 text-zenova-ivory"
+                    : "bg-zenova-ivory text-zenova-sand-900"
                   : scrolled
-                    ? "text-zenova-ink/70 hover:text-zenova-ink"
+                    ? "text-zenova-sand-900/70 hover:text-zenova-sand-900"
                     : "text-zenova-ivory/80 hover:text-zenova-ivory"
               }`}
               aria-label="Tiếng Việt"
@@ -182,10 +184,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                 lang === "en"
                   ? scrolled
-                    ? "bg-zenova-ink text-zenova-ivory"
-                    : "bg-zenova-ivory text-zenova-ink"
+                    ? "bg-zenova-sand-900 text-zenova-ivory"
+                    : "bg-zenova-ivory text-zenova-sand-900"
                   : scrolled
-                    ? "text-zenova-ink/70 hover:text-zenova-ink"
+                    ? "text-zenova-sand-900/70 hover:text-zenova-sand-900"
                     : "text-zenova-ivory/80 hover:text-zenova-ivory"
               }`}
               aria-label="English"
@@ -197,12 +199,12 @@ export function Header({ lang, setLang, t }: HeaderProps) {
           <ThemeToggle
             className={
               scrolled
-                ? "border-zenova-ink/20 text-zenova-ink hover:bg-zenova-ink/5"
+                ? "border-zenova-sand-900/20 text-zenova-sand-900 hover:bg-zenova-sand-900/5"
                 : "border-zenova-ivory/30 text-zenova-ivory hover:bg-zenova-ivory/10"
             }
           />
 
-          <Button asChild className="btn-sheen rounded-none bg-zenova-gold text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ink hover:bg-zenova-gold/90">
+          <Button asChild className="btn-sheen rounded-none bg-zenova-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ivory hover:bg-zenova-sand-700">
             <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
               {t.nav.book}
             </a>
@@ -215,9 +217,9 @@ export function Header({ lang, setLang, t }: HeaderProps) {
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? (
-            <X className={`h-6 w-6 ${scrolled ? "text-zenova-ink" : "text-zenova-ivory"}`} />
+            <X className={`h-6 w-6 ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`} />
           ) : (
-            <Menu className={`h-6 w-6 ${scrolled ? "text-zenova-ink" : "text-zenova-ivory"}`} />
+            <Menu className={`h-6 w-6 ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`} />
           )}
         </button>
       </div>
@@ -273,7 +275,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               <button
                 onClick={() => setLang("vi")}
                 className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                  lang === "vi" ? "bg-zenova-ink text-zenova-ivory" : "text-zenova-ink/70"
+                  lang === "vi" ? "bg-zenova-sand-900 text-zenova-ivory" : "text-zenova-sand-900/70"
                 }`}
               >
                 VI
@@ -281,14 +283,14 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               <button
                 onClick={() => setLang("en")}
                 className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                  lang === "en" ? "bg-zenova-ink text-zenova-ivory" : "text-zenova-ink/70"
+                  lang === "en" ? "bg-zenova-sand-900 text-zenova-ivory" : "text-zenova-sand-900/70"
                 }`}
               >
                 EN
               </button>
-              <ThemeToggle className="border-zenova-ink/15 text-zenova-ink hover:bg-zenova-ink/5" />
+              <ThemeToggle className="border-zenova-sand-900/15 text-zenova-sand-900 hover:bg-zenova-sand-900/5" />
             </div>
-            <Button asChild className="btn-sheen rounded-none bg-zenova-gold text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ink hover:bg-zenova-gold/90">
+            <Button asChild className="btn-sheen rounded-none bg-zenova-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ivory hover:bg-zenova-sand-700">
               <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
                 {t.nav.book}
               </a>

@@ -23,6 +23,7 @@ interface RecruitTeaserProps {
     recruitTeaser: {
       label: string;
       title: string;
+      titleAccent: string;
       subtitle: string;
       name: string;
       contact: string;
@@ -70,13 +71,12 @@ export function RecruitTeaser({ lang, t }: RecruitTeaserProps) {
   };
 
   return (
-    <section id="recruit" className="section-cream py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl px-6 lg:px-8">
-        <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2 lg:gap-24">
-          <Reveal>
+    <section id="recruit" className="bg-zenova-ivory py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 md:px-20 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2 lg:gap-20">
+          <Reveal className="order-1 lg:order-2">
             <div className="relative">
-              <div className="absolute -inset-6 translate-x-4 translate-y-4 border border-zenova-gold/40" />
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-zenova-sand-100 shadow-2xl">
                 <img
                   src={recruitImage}
                   alt="Zenova Cruise reception and hospitality team"
@@ -84,23 +84,24 @@ export function RecruitTeaser({ lang, t }: RecruitTeaserProps) {
                   className="h-full w-full object-cover transition-transform duration-1000 hover:scale-105"
                 />
               </div>
+              <div className="absolute -top-10 -right-10 hidden h-40 w-40 border border-zenova-sand-300/30 md:block" />
+              <div className="absolute -bottom-6 -left-6 -z-10 h-full w-full border border-zenova-sand-300/20" />
             </div>
           </Reveal>
 
-          <Reveal delay={160}>
+          <Reveal delay={160} className="order-2 lg:order-1">
             <div className="space-y-8">
-              <p className="eyebrow text-zenova-gold-ink">{tr.label}</p>
-              <h2 className="font-display text-4xl font-light leading-tight text-zenova-ink md:text-5xl">
-                {tr.title}
-              </h2>
-              <p className="leading-loose text-zenova-ink/65">{tr.subtitle}</p>
+              <div className="space-y-4">
+                <h2 className="font-display text-4xl font-normal leading-tight text-zenova-sand-900 md:text-5xl lg:text-6xl">
+                  {tr.title} <span className="font-display italic font-light text-zenova-sand-500">{tr.titleAccent}</span>
+                </h2>
+                <div className="h-px w-20 bg-zenova-sand-500" />
+              </div>
+              <p className="text-lg font-light leading-relaxed text-zenova-sand-700">{tr.subtitle}</p>
 
               <form onSubmit={handleSubmit} className="space-y-6 pt-4">
                 <div className="space-y-2">
-                  <Label
-                    htmlFor="recruit-name"
-                    className="text-xs uppercase tracking-[0.24em] text-zenova-ink/70"
-                  >
+                  <Label htmlFor="recruit-name" className="text-xs uppercase tracking-[0.2em] text-zenova-sand-500">
                     {tr.name}
                   </Label>
                   <Input
@@ -108,14 +109,11 @@ export function RecruitTeaser({ lang, t }: RecruitTeaserProps) {
                     value={values.name}
                     onChange={(e) => setValues((v) => ({ ...v, name: e.target.value }))}
                     required
-                    className="field-underline h-10 border-zenova-ink/20 text-zenova-ink transition-colors placeholder:text-zenova-ink/30 focus:border-zenova-gold"
+                    className="field-underline h-10 border-zenova-sand-300/40 text-zenova-sand-900 transition-colors placeholder:text-zenova-sand-300/50 focus:border-zenova-sand-700"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label
-                    htmlFor="recruit-contact"
-                    className="text-xs uppercase tracking-[0.24em] text-zenova-ink/70"
-                  >
+                  <Label htmlFor="recruit-contact" className="text-xs uppercase tracking-[0.2em] text-zenova-sand-500">
                     {tr.contact}
                   </Label>
                   <Input
@@ -123,14 +121,11 @@ export function RecruitTeaser({ lang, t }: RecruitTeaserProps) {
                     value={values.contact}
                     onChange={(e) => setValues((v) => ({ ...v, contact: e.target.value }))}
                     required
-                    className="field-underline h-10 border-zenova-ink/20 text-zenova-ink transition-colors placeholder:text-zenova-ink/30 focus:border-zenova-gold"
+                    className="field-underline h-10 border-zenova-sand-300/40 text-zenova-sand-900 transition-colors placeholder:text-zenova-sand-300/50 focus:border-zenova-sand-700"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label
-                    htmlFor="recruit-position"
-                    className="text-xs uppercase tracking-[0.24em] text-zenova-ink/70"
-                  >
+                  <Label htmlFor="recruit-position" className="text-xs uppercase tracking-[0.2em] text-zenova-sand-500">
                     {tr.position}
                   </Label>
                   <select
@@ -138,7 +133,7 @@ export function RecruitTeaser({ lang, t }: RecruitTeaserProps) {
                     value={values.position}
                     onChange={(e) => setValues((v) => ({ ...v, position: e.target.value }))}
                     required
-                    className="field-underline h-10 w-full border-zenova-ink/20 bg-transparent text-sm text-zenova-ink transition-colors focus:border-zenova-gold focus:outline-none"
+                    className="field-underline h-10 w-full border-zenova-sand-300/40 bg-transparent text-sm text-zenova-sand-900 transition-colors focus:border-zenova-sand-700 focus:outline-none"
                   >
                     <option value="" disabled>
                       {tr.positionPlaceholder}
@@ -151,18 +146,17 @@ export function RecruitTeaser({ lang, t }: RecruitTeaserProps) {
                   </select>
                 </div>
 
-                <div className="flex flex-col items-center gap-5 pt-4 sm:flex-row sm:justify-between">
+                <div className="flex flex-col items-start gap-6 pt-4 sm:flex-row sm:items-center">
                   <Button
                     type="submit"
                     disabled={submitting}
-                    size="lg"
-                    className="btn-sheen w-full rounded-none bg-zenova-ink px-8 text-xs font-semibold uppercase tracking-[0.2em] text-zenova-ivory hover:bg-zenova-gold hover:text-zenova-ink sm:w-auto"
+                    className="w-full rounded-none bg-zenova-sand-700 px-8 text-xs font-semibold uppercase tracking-[0.2em] text-zenova-ivory transition-colors hover:bg-zenova-sand-900 sm:w-auto"
                   >
                     {submitting ? "..." : tr.submit}
                   </Button>
                   <Link
                     to="/careers"
-                    className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ink/70 transition-colors hover:text-zenova-gold-ink"
+                    className="group inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-sand-700 transition-colors hover:text-zenova-sand-500"
                   >
                     {tr.viewAll}
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { toast } from "sonner";
 
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { HeroMedia, type HeroSlide } from "./HeroMedia";
@@ -24,12 +23,10 @@ interface HeroProps {
       scroll: string;
     };
     earlyAccess: {
-      name: string;
       contact: string;
       contactPlaceholder: string;
       submit: string;
       success: string;
-      helper: string;
     };
   };
 }
@@ -42,111 +39,84 @@ const SLIDES: HeroSlide[] = [
 ];
 
 export function Hero({ t }: HeroProps) {
-  const [values, setValues] = useState({ name: "", contact: "" });
+  const [contact, setContact] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!values.name.trim() || !values.contact.trim()) return;
+    if (!contact.trim()) return;
     toast.success(t.earlyAccess.success);
     setSubmitted(true);
-    setValues({ name: "", contact: "" });
+    setContact("");
   };
 
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
+    <section className="relative flex h-screen w-full items-center justify-center overflow-hidden">
       <HeroMedia slides={SLIDES} intervalMs={7000} />
-      <div className="pointer-events-none absolute inset-0 hero-overlay-deep" />
+      <div className="pointer-events-none absolute inset-0 bg-black/30" />
       <div
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 78% 58% at 50% 54%, rgba(8,14,26,0.80) 0%, rgba(8,14,26,0.62) 45%, rgba(8,14,26,0.18) 75%, transparent 100%)",
-        }}
-      />
-
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to bottom, transparent 26%, rgba(8,14,26,0.62) 44%, rgba(8,14,26,0.60) 74%, transparent 90%)",
+            "linear-gradient(to bottom, rgba(0,0,0,0.40) 0%, transparent 40%, transparent 60%, var(--color-zenova-ivory) 100%)",
         }}
       />
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6 text-center lg:px-8">
         <Reveal immediate delay={100}>
-          <p className="eyebrow mb-8 justify-center text-zenova-gold-light drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
+          <span className="mb-6 inline-block text-xs font-semibold uppercase tracking-[0.5em] text-zenova-sand-300 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
             {t.hero.tagline}
-          </p>
+          </span>
         </Reveal>
         <Reveal immediate delay={260}>
-          <h1 className="mb-8 text-6xl leading-[0.95] tracking-tighter text-zenova-ivory text-glow sm:text-7xl md:text-8xl lg:text-9xl">
-            {t.hero.title}{" "}
-            <span className="font-display italic text-zenova-gold-light">
-              {t.hero.titleAccent}
-            </span>
+          <h1 className="mb-8 text-5xl font-normal tracking-tight text-white drop-shadow-xl sm:text-6xl md:text-7xl lg:text-8xl font-display">
+            {t.hero.title} <span className="font-display italic text-zenova-sand-300">{t.hero.titleAccent}</span>
           </h1>
         </Reveal>
         <Reveal immediate delay={420}>
-          <p className="mx-auto mb-12 max-w-2xl text-base font-light leading-relaxed text-zenova-ivory sm:text-lg drop-shadow-[0_1px_8px_rgba(0,0,0,0.75)]">
+          <p className="mx-auto mb-12 max-w-2xl text-base font-light leading-relaxed text-white/90 drop-shadow-[0_1px_8px_rgba(0,0,0,0.75)]">
             {t.hero.subtitle}
           </p>
         </Reveal>
 
         {!submitted ? (
-          <Reveal
-            immediate
-            delay={580}
-            as="form"
-            onSubmit={handleSubmit}
-            className="mx-auto max-w-md"
-          >
-            <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-transparent via-zenova-gold/20 to-transparent blur-sm" />
-              <div className="relative flex flex-col gap-0 overflow-hidden border border-gold-subtle bg-zenova-ink/60 backdrop-blur-md md:flex-row">
-                <div className="flex-1">
-                  <Label htmlFor="early-contact" className="sr-only">
-                    {t.earlyAccess.contact}
-                  </Label>
-                  <Input
-                    id="early-contact"
-                    value={values.contact}
-                    onChange={(e) =>
-                      setValues((v) => ({ ...v, contact: e.target.value }))
-                    }
-                    placeholder={t.earlyAccess.contact}
-                    required
-                    className="h-14 rounded-none border-0 border-b border-gold-subtle bg-transparent px-6 text-sm text-zenova-ivory placeholder:font-light placeholder:text-zenova-ivory/85 focus:bg-zenova-gold/5 focus-visible:ring-0 focus-visible:ring-offset-0 md:border-b-0 md:border-r"
-                  />
-                </div>
-                <Button
-                  type="submit"
-                  className="btn-sheen h-14 rounded-none bg-zenova-gold-light px-8 text-xs font-semibold uppercase tracking-[0.2em] text-zenova-ink hover:bg-zenova-ivory"
-                >
-                  {t.hero.cta}
-                </Button>
-              </div>
+          <Reveal immediate delay={580} as="form" onSubmit={handleSubmit} className="mx-auto max-w-md">
+            <div className="flex flex-col gap-2 rounded-full border border-white/20 bg-white/10 p-1.5 shadow-2xl backdrop-blur-md sm:flex-row">
+              <Label htmlFor="early-contact" className="sr-only">
+                {t.earlyAccess.contact}
+              </Label>
+              <Input
+                id="early-contact"
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
+                placeholder={t.earlyAccess.contactPlaceholder}
+                required
+                className="flex-1 rounded-full border-0 bg-transparent px-6 py-3 text-sm text-white placeholder:text-white/60 focus:bg-white/10 focus-visible:ring-0 focus-visible:ring-offset-0"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-zenova-sand-500 px-8 py-3 text-xs font-medium uppercase tracking-[0.15em] text-white transition-all duration-500 hover:bg-zenova-sand-700"
+              >
+                {t.hero.cta}
+              </button>
             </div>
-            <p className="mt-4 text-xs font-medium uppercase tracking-[0.24em] text-zenova-ivory/90 drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-              {t.earlyAccess.helper}
-            </p>
           </Reveal>
         ) : (
           <Reveal
             immediate
             delay={200}
-            className="mx-auto max-w-md rounded-sm border border-zenova-gold/30 bg-zenova-ivory/10 p-6 backdrop-blur-sm"
+            className="mx-auto max-w-md rounded-full border border-zenova-sand-300/30 bg-white/10 px-8 py-4 backdrop-blur-sm"
           >
-            <p className="text-zenova-ivory">{t.earlyAccess.success}</p>
+            <p className="text-sm text-white">{t.earlyAccess.success}</p>
           </Reveal>
         )}
       </div>
 
       <div className="pointer-events-none absolute bottom-10 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-4">
-        <span className="text-xs uppercase tracking-[0.3em] text-zenova-ivory/85 drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
+        <span className="text-xs uppercase tracking-[0.3em] text-white/80 drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)]">
           {t.hero.scroll}
         </span>
-        <span className="h-16 w-px bg-gradient-to-b from-zenova-gold-light to-transparent" />
+        <span className="h-16 w-px bg-gradient-to-b from-white/60 to-transparent" />
       </div>
     </section>
   );

@@ -84,6 +84,7 @@ export interface Translations {
   recruitTeaser: {
     label: string;
     title: string;
+    titleAccent: string;
     subtitle: string;
     name: string;
     contact: string;
@@ -253,7 +254,8 @@ const translations: Record<Lang, Translations> = {
     },
     recruitTeaser: {
       label: "TUYỂN DỤNG",
-      title: "Gia nhập đội ngũ Zenova",
+      title: "Kiến tạo",
+      titleAccent: "Hành trình di sản",
       subtitle: "Tàu sắp ra mắt và chúng tôi đang tìm những con người tận tâm cho đội ngũ vận hành.",
       name: "Họ tên",
       contact: "Số điện thoại / Email",
@@ -421,7 +423,8 @@ const translations: Record<Lang, Translations> = {
     },
     recruitTeaser: {
       label: "CAREERS",
-      title: "Join the Zenova crew",
+      title: "Craft",
+      titleAccent: "Heritage Journeys",
       subtitle: "The cruise is launching soon and we are looking for dedicated people to join our operations team.",
       name: "Full name",
       contact: "Phone / Email",
