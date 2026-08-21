@@ -29,7 +29,7 @@ export function DeckPlan({ zones, vi, hint }: DeckPlanProps) {
   return (
     <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr] lg:items-center">
       <div>
-        <div className="relative aspect-[4/3] w-full touch-manipulation rounded-sm border border-zenova-ink/15 bg-zenova-ink/[0.04] p-2">
+        <div className="relative aspect-[4/3] w-full touch-manipulation rounded-sm border border-chronos-ink/15 bg-chronos-ink/[0.04] p-2">
           {zones.map((z, i) => {
             const isActive = activeIndex === i;
             const button = (
@@ -40,8 +40,8 @@ export function DeckPlan({ zones, vi, hint }: DeckPlanProps) {
                 className={cn(
                   "absolute flex select-none items-center justify-center rounded-sm border p-2 text-center transition-colors",
                   isActive
-                    ? "border-zenova-gold bg-zenova-gold/25"
-                    : "border-zenova-gold/40 bg-zenova-gold/10 hover:bg-zenova-gold/20",
+                    ? "border-chronos-gold bg-chronos-gold/25"
+                    : "border-chronos-gold/40 bg-chronos-gold/10 hover:bg-chronos-gold/20",
                 )}
                 style={{
                   left: `${z.x}%`,
@@ -50,7 +50,7 @@ export function DeckPlan({ zones, vi, hint }: DeckPlanProps) {
                   height: `${z.h}%`,
                 }}
               >
-                <span className="line-clamp-3 text-xs uppercase leading-tight tracking-[0.18em] text-zenova-ink">
+                <span className="line-clamp-3 text-xs uppercase leading-tight tracking-[0.18em] text-chronos-ink">
                   {label(z)}
                 </span>
               </button>
@@ -77,17 +77,17 @@ export function DeckPlan({ zones, vi, hint }: DeckPlanProps) {
 
         <div
           aria-live="polite"
-          className="mt-3 min-h-14 rounded-sm border border-zenova-ink/10 bg-zenova-ink/[0.03] px-4 py-3"
+          className="mt-3 min-h-14 rounded-sm border border-chronos-ink/10 bg-chronos-ink/[0.03] px-4 py-3"
         >
           {active ? (
             <>
-              <p className="text-xs uppercase tracking-[0.24em] text-zenova-gold">
+              <p className="text-xs uppercase tracking-[0.24em] text-chronos-gold">
                 {vi ? "KHU VỰC" : "AREA"}
               </p>
-              <p className="mt-1 text-sm text-zenova-ink">{label(active)}</p>
+              <p className="mt-1 text-sm text-chronos-ink">{label(active)}</p>
             </>
           ) : (
-            <p className="text-sm text-zenova-stone/75">
+            <p className="text-sm text-chronos-stone/75">
               {vi
                 ? "Chạm vào từng khu vực trên sơ đồ để xem tên khu vực."
                 : "Tap any area on the plan to see its name."}
@@ -96,7 +96,7 @@ export function DeckPlan({ zones, vi, hint }: DeckPlanProps) {
         </div>
       </div>
 
-      <p className="text-sm text-zenova-stone/80">{hint}</p>
+      <p className="text-sm text-chronos-stone/80">{hint}</p>
     </div>
   );
 }

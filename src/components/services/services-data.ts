@@ -89,9 +89,9 @@ export const services: Service[] = [
     taglineVi: "Từ lounge nhạc sống đến không gian riêng cho cả gia đình",
     taglineEn: "From live-music lounge to private family spaces",
     introVi:
-      "Buổi tối trên Zenova bắt đầu ở Sky Lounge với cocktail và nhạc sống, rồi mở rộng ra nhiều không gian riêng: phòng karaoke cách âm, phòng cigar, khu trò chơi bàn và phòng sinh hoạt cho trẻ em. Mỗi khu vực được bố trí tách biệt để nhóm khách khác nhau đều có nhịp riêng của mình.",
+      "Buổi tối trên Chronos bắt đầu ở Sky Lounge với cocktail và nhạc sống, rồi mở rộng ra nhiều không gian riêng: phòng karaoke cách âm, phòng cigar, khu trò chơi bàn và phòng sinh hoạt cho trẻ em. Mỗi khu vực được bố trí tách biệt để nhóm khách khác nhau đều có nhịp riêng của mình.",
     introEn:
-      "Evenings aboard Zenova start at the Sky Lounge with cocktails and live music, then spread into a set of private rooms: a sound-proof karaoke suite, a cigar room, a games salon and a dedicated kids' room. Each space sits apart so every group keeps its own rhythm.",
+      "Evenings aboard Chronos start at the Sky Lounge with cocktails and live music, then spread into a set of private rooms: a sound-proof karaoke suite, a cigar room, a games salon and a dedicated kids' room. Each space sits apart so every group keeps its own rhythm.",
     highlights: [
       {
         titleVi: "Sky Lounge & bar",
@@ -185,9 +185,9 @@ export const services: Service[] = [
     taglineVi: "Trái tim của con tàu, nơi mọi hành trình bắt đầu",
     taglineEn: "The heart of the ship, where every voyage begins",
     introVi:
-      "Sảnh chính hai tầng với cầu thang trung tâm là điểm đón khách đầu tiên trên Zenova. Từ đây, quầy lễ tân, lounge chờ, hồ bơi trong nhà và khu jacuzzi kết nối liền mạch, tạo nên trục sinh hoạt chung của toàn tàu.",
+      "Sảnh chính hai tầng với cầu thang trung tâm là điểm đón khách đầu tiên trên Chronos. Từ đây, quầy lễ tân, lounge chờ, hồ bơi trong nhà và khu jacuzzi kết nối liền mạch, tạo nên trục sinh hoạt chung của toàn tàu.",
     introEn:
-      "A double-height lobby with a sculptural central staircase welcomes guests aboard Zenova. Reception, the waiting lounge, the indoor pool and the jacuzzi area flow from it, forming the social spine of the ship.",
+      "A double-height lobby with a sculptural central staircase welcomes guests aboard Chronos. Reception, the waiting lounge, the indoor pool and the jacuzzi area flow from it, forming the social spine of the ship.",
     highlights: [
       {
         titleVi: "Sảnh đón hai tầng",
@@ -275,9 +275,9 @@ export const services: Service[] = [
     taglineVi: "Đường nét du thuyền hiện đại trên vịnh di sản",
     taglineEn: "A modern yacht silhouette on a heritage bay",
     introVi:
-      "Zenova được thiết kế theo ngôn ngữ du thuyền hiện đại: thân tàu thanh mảnh, dải kính liên tục và các tầng boong lùi dần tạo nhịp thị giác. Toàn bộ 44 phòng đều hướng biển, mỗi tầng đều có khu vực ngoài trời riêng.",
+      "Chronos được thiết kế theo ngôn ngữ du thuyền hiện đại: thân tàu thanh mảnh, dải kính liên tục và các tầng boong lùi dần tạo nhịp thị giác. Toàn bộ 44 phòng đều hướng biển, mỗi tầng đều có khu vực ngoài trời riêng.",
     introEn:
-      "Zenova is drawn in a contemporary yacht language: a slender hull, continuous glazing and stepped decks that give the profile its rhythm. All 44 cabins face the sea, and every deck keeps its own outdoor terrace.",
+      "Chronos is drawn in a contemporary yacht language: a slender hull, continuous glazing and stepped decks that give the profile its rhythm. All 44 cabins face the sea, and every deck keeps its own outdoor terrace.",
     highlights: [
       {
         titleVi: "44 phòng hướng biển",

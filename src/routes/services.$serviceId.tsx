@@ -16,7 +16,7 @@ export const Route = createFileRoute("/services/$serviceId")({
       return { meta: [{ title: "Unavailable" }, { name: "robots", content: "noindex" }] };
     }
     const { service } = loaderData;
-    const title = `${service.nameEn} | Zenova Cruise`;
+    const title = `${service.nameEn} | Chronos Cruise`;
     const desc = service.introEn.slice(0, 155);
     const hero = serviceImages(service)[0];
     const image = hero ? `${SITE_URL}${hero.src}` : undefined;

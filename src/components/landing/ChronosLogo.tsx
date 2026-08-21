@@ -1,4 +1,4 @@
-interface ZenovaLogoProps extends React.HTMLAttributes<HTMLSpanElement> {
+interface ChronosLogoProps extends React.HTMLAttributes<HTMLSpanElement> {
   className?: string;
   /** stacked = mark trên, chữ dưới (footer) | inline = mark bên trái (header) */
   variant?: "inline" | "stacked";
@@ -6,16 +6,16 @@ interface ZenovaLogoProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 /**
- * Logo Zenova Cruise dựng vector: Hòn Trống (hình thang vuông) + Hòn Mái
+ * Logo Chronos Cruise dựng vector: Hòn Trống (hình thang vuông) + Hòn Mái
  * (tam giác vuông) trên hai vạch thủy ba, ẩn chữ K. Dùng currentColor nên
  * tự đổi màu theo ngữ cảnh.
  */
-export function ZenovaLogo({
+export function ChronosLogo({
   className,
   variant = "inline",
   showTagline = true,
   ...rest
-}: ZenovaLogoProps) {
+}: ChronosLogoProps) {
   const mark = (
     <svg
       viewBox="0 0 120 104"
@@ -47,7 +47,7 @@ export function ZenovaLogo({
     >
       <span className="flex items-baseline gap-[0.5em] whitespace-nowrap">
         <span className="font-display text-[1.5em] tracking-[0.16em] leading-none">
-          ZENOVA
+          CHRONOS
         </span>
         <span className="font-body text-[0.72em] tracking-[0.34em] leading-none">
           CRUISE

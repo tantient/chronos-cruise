@@ -59,22 +59,22 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --color-zenova-ink: var(--zenova-ink);
-  --color-zenova-ivory: var(--zenova-ivory);
-  --color-zenova-gold: var(--zenova-gold);
-  --color-zenova-gold-ink: var(--zenova-gold-ink);
-  --color-zenova-gold-light: var(--zenova-gold-light);
-  --color-zenova-navy: var(--zenova-navy);
-  --color-zenova-stone: var(--zenova-stone);
-  --color-zenova-warm: var(--zenova-warm);
-  --color-zenova-deep: var(--zenova-deep);
-  --color-zenova-cream: var(--zenova-cream);
-  --color-zenova-sand-50: var(--zenova-sand-50);
-  --color-zenova-sand-100: var(--zenova-sand-100);
-  --color-zenova-sand-300: var(--zenova-sand-300);
-  --color-zenova-sand-500: var(--zenova-sand-500);
-  --color-zenova-sand-700: var(--zenova-sand-700);
-  --color-zenova-sand-900: var(--zenova-sand-900);
+  --color-chronos-ink: var(--chronos-ink);
+  --color-chronos-ivory: var(--chronos-ivory);
+  --color-chronos-gold: var(--chronos-gold);
+  --color-chronos-gold-ink: var(--chronos-gold-ink);
+  --color-chronos-gold-light: var(--chronos-gold-light);
+  --color-chronos-navy: var(--chronos-navy);
+  --color-chronos-stone: var(--chronos-stone);
+  --color-chronos-warm: var(--chronos-warm);
+  --color-chronos-deep: var(--chronos-deep);
+  --color-chronos-cream: var(--chronos-cream);
+  --color-chronos-sand-50: var(--chronos-sand-50);
+  --color-chronos-sand-100: var(--chronos-sand-100);
+  --color-chronos-sand-300: var(--chronos-sand-300);
+  --color-chronos-sand-500: var(--chronos-sand-500);
+  --color-chronos-sand-700: var(--chronos-sand-700);
+  --color-chronos-sand-900: var(--chronos-sand-900);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 
@@ -114,22 +114,22 @@
   --sidebar-accent-foreground: oklch(0.20 0.03 90);
   --sidebar-border: oklch(0.88 0.02 95);
   --sidebar-ring: oklch(0.78 0.042 95);
-  --zenova-ink: oklch(0.20 0.03 90);
-  --zenova-ivory: oklch(0.975 0.004 95);
-  --zenova-gold: oklch(0.78 0.042 95);
-  --zenova-gold-ink: oklch(0.72 0.04 95);
-  --zenova-gold-light: oklch(0.85 0.04 95);
-  --zenova-navy: oklch(0.52 0.055 95);
-  --zenova-stone: oklch(0.55 0.05 95);
-  --zenova-warm: oklch(0.935 0.009 95);
-  --zenova-deep: oklch(0.52 0.055 95);
-  --zenova-cream: oklch(0.935 0.009 95);
-  --zenova-sand-50: oklch(0.975 0.004 95);
-  --zenova-sand-100: oklch(0.935 0.009 95);
-  --zenova-sand-300: oklch(0.85 0.04 95);
-  --zenova-sand-500: oklch(0.78 0.042 95);
-  --zenova-sand-700: oklch(0.55 0.05 95);
-  --zenova-sand-900: oklch(0.20 0.03 90);
+  --chronos-ink: oklch(0.20 0.03 90);
+  --chronos-ivory: oklch(0.975 0.004 95);
+  --chronos-gold: oklch(0.78 0.042 95);
+  --chronos-gold-ink: oklch(0.72 0.04 95);
+  --chronos-gold-light: oklch(0.85 0.04 95);
+  --chronos-navy: oklch(0.52 0.055 95);
+  --chronos-stone: oklch(0.55 0.05 95);
+  --chronos-warm: oklch(0.935 0.009 95);
+  --chronos-deep: oklch(0.52 0.055 95);
+  --chronos-cream: oklch(0.935 0.009 95);
+  --chronos-sand-50: oklch(0.975 0.004 95);
+  --chronos-sand-100: oklch(0.935 0.009 95);
+  --chronos-sand-300: oklch(0.85 0.04 95);
+  --chronos-sand-500: oklch(0.78 0.042 95);
+  --chronos-sand-700: oklch(0.55 0.05 95);
+  --chronos-sand-900: oklch(0.20 0.03 90);
   --font-display: "Libre Baskerville", "Cormorant Garamond", "Times New Roman", serif;
   --font-body: "IBM Plex Sans", "Jura", ui-sans-serif, system-ui, sans-serif;
 }
@@ -168,16 +168,16 @@
   --sidebar-accent-foreground: oklch(0.959 0.013 109.2);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.728 0.063 88.7);
-  --zenova-ink: oklch(0.12 0.025 264);
-  --zenova-ivory: oklch(0.959 0.013 109.2);
-  --zenova-gold: oklch(0.79 0.088 88.7);
-  --zenova-gold-ink: oklch(0.82 0.08 88.7);
-  --zenova-gold-light: oklch(0.87 0.085 88.7);
-  --zenova-navy: oklch(0.115 0.024 274.7);
-  --zenova-stone: oklch(0.79 0.012 270.5);
-  --zenova-warm: oklch(0.255 0.016 264);
-  --zenova-deep: oklch(0.05 0.01 264);
-  --zenova-cream: oklch(0.18 0.012 95);
+  --chronos-ink: oklch(0.12 0.025 264);
+  --chronos-ivory: oklch(0.959 0.013 109.2);
+  --chronos-gold: oklch(0.79 0.088 88.7);
+  --chronos-gold-ink: oklch(0.82 0.08 88.7);
+  --chronos-gold-light: oklch(0.87 0.085 88.7);
+  --chronos-navy: oklch(0.115 0.024 274.7);
+  --chronos-stone: oklch(0.79 0.012 270.5);
+  --chronos-warm: oklch(0.255 0.016 264);
+  --chronos-deep: oklch(0.05 0.01 264);
+  --chronos-cream: oklch(0.18 0.012 95);
   color-scheme: dark;
 }
 
@@ -250,7 +250,7 @@
 }
 
 /* Reveal khi cuộn / khi tải trang */
-@keyframes zenova-fade-up {
+@keyframes chronos-fade-up {
   from {
     opacity: 0;
     transform: translateY(24px);
@@ -271,7 +271,7 @@
   }
 
   .reveal-in {
-    animation: zenova-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: chronos-fade-up 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 }
 
@@ -289,7 +289,7 @@
     content: "";
     width: 2.25rem;
     height: 1px;
-    background-color: var(--zenova-gold);
+    background-color: var(--chronos-gold);
     opacity: 0.8;
   }
 }
@@ -338,33 +338,33 @@
 
 /* Glow nhẹ cho headline hero */
 @utility text-glow {
-  text-shadow: 0 0 40px color-mix(in oklab, var(--zenova-gold) 25%, transparent),
+  text-shadow: 0 0 40px color-mix(in oklab, var(--chronos-gold) 25%, transparent),
     0 2px 18px rgba(0, 0, 0, 0.4);
 }
 
 /* Nền section sáng (cream) */
 @utility section-cream {
-  background-color: var(--zenova-cream);
-  color: var(--zenova-deep);
+  background-color: var(--chronos-cream);
+  color: var(--chronos-deep);
 }
 
 /* Overlay gradient nhẹ cho hero (giữ ảnh sáng, chữ vẫn đọc được) */
 @utility hero-overlay-deep {
   background: linear-gradient(
     to bottom,
-    color-mix(in oklab, var(--zenova-ink) 42%, transparent) 0%,
-    color-mix(in oklab, var(--zenova-ink) 12%, transparent) 45%,
-    color-mix(in oklab, var(--zenova-ink) 45%, transparent) 100%
+    color-mix(in oklab, var(--chronos-ink) 42%, transparent) 0%,
+    color-mix(in oklab, var(--chronos-ink) 12%, transparent) 45%,
+    color-mix(in oklab, var(--chronos-ink) 45%, transparent) 100%
   );
 }
 
 /* Viền vàng tinh tế */
 @utility border-gold-subtle {
-  border-color: color-mix(in oklab, var(--zenova-gold) 30%, transparent);
+  border-color: color-mix(in oklab, var(--chronos-gold) 30%, transparent);
 }
 
 /* Nền kính mờ trên nền tối */
 @utility glass-dark {
-  background-color: color-mix(in oklab, var(--zenova-deep) 40%, transparent);
+  background-color: color-mix(in oklab, var(--chronos-deep) 40%, transparent);
   backdrop-filter: blur(12px);
 }

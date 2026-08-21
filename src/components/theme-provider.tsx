@@ -4,7 +4,7 @@ import { createContext, useCallback, useContext, useEffect, useState, type React
 
 export type Theme = "light" | "dark";
 
-const STORAGE_KEY = "zenova-theme";
+const STORAGE_KEY = "chronos-theme";
 
 interface ThemeContextValue {
   theme: Theme;

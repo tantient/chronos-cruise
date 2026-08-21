@@ -71,12 +71,12 @@ export function AdminApplicationsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-zenova-ivory px-6 py-16 lg:px-12">
+    <main className="min-h-screen bg-chronos-ivory px-6 py-16 lg:px-12">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p className="eyebrow mb-2 text-zenova-gold">QUẢN TRỊ</p>
-            <h1 className="text-3xl tracking-[0.02em] text-zenova-ink">Hồ sơ ứng tuyển</h1>
+            <p className="eyebrow mb-2 text-chronos-gold">QUẢN TRỊ</p>
+            <h1 className="text-3xl tracking-[0.02em] text-chronos-ink">Hồ sơ ứng tuyển</h1>
           </div>
           <Button
             variant="outline"
@@ -87,19 +87,19 @@ export function AdminApplicationsPage() {
           </Button>
         </div>
 
-        {rolesQuery.isLoading && <p className="text-zenova-stone/80">Đang kiểm tra quyền…</p>}
+        {rolesQuery.isLoading && <p className="text-chronos-stone/80">Đang kiểm tra quyền…</p>}
 
         {rolesQuery.data === false && (
-          <p className="border border-zenova-ink/10 bg-card p-6 text-sm text-zenova-stone/85">
+          <p className="border border-chronos-ink/10 bg-card p-6 text-sm text-chronos-stone/85">
             Tài khoản của bạn chưa có quyền quản trị. Hãy yêu cầu cấp quyền admin để xem danh sách hồ
             sơ.
           </p>
         )}
 
         {rolesQuery.data === true && (
-          <div className="overflow-x-auto border border-zenova-ink/10 bg-card">
+          <div className="overflow-x-auto border border-chronos-ink/10 bg-card">
             <table className="w-full min-w-[720px] text-left text-sm">
-              <thead className="border-b border-zenova-ink/10 text-xs uppercase tracking-[0.2em] text-zenova-stone/70">
+              <thead className="border-b border-chronos-ink/10 text-xs uppercase tracking-[0.2em] text-chronos-stone/70">
                 <tr>
                   <th className="px-5 py-4">Họ tên</th>
                   <th className="px-5 py-4">Liên hệ</th>
@@ -111,31 +111,31 @@ export function AdminApplicationsPage() {
               <tbody>
                 {applicationsQuery.isLoading && (
                   <tr>
-                    <td className="px-5 py-6 text-zenova-stone/70" colSpan={5}>
+                    <td className="px-5 py-6 text-chronos-stone/70" colSpan={5}>
                       Đang tải…
                     </td>
                   </tr>
                 )}
                 {applicationsQuery.data?.length === 0 && (
                   <tr>
-                    <td className="px-5 py-6 text-zenova-stone/70" colSpan={5}>
+                    <td className="px-5 py-6 text-chronos-stone/70" colSpan={5}>
                       Chưa có hồ sơ nào.
                     </td>
                   </tr>
                 )}
                 {applicationsQuery.data?.map((row) => (
-                  <tr key={row.id} className="border-b border-zenova-ink/5 last:border-0">
-                    <td className="px-5 py-4 text-zenova-ink">{row.full_name}</td>
-                    <td className="px-5 py-4 text-zenova-stone/85">{row.contact}</td>
-                    <td className="px-5 py-4 text-zenova-stone/85">{positionLabel(row.position_id)}</td>
-                    <td className="px-5 py-4 text-zenova-stone/70">
+                  <tr key={row.id} className="border-b border-chronos-ink/5 last:border-0">
+                    <td className="px-5 py-4 text-chronos-ink">{row.full_name}</td>
+                    <td className="px-5 py-4 text-chronos-stone/85">{row.contact}</td>
+                    <td className="px-5 py-4 text-chronos-stone/85">{positionLabel(row.position_id)}</td>
+                    <td className="px-5 py-4 text-chronos-stone/70">
                       {new Date(row.created_at).toLocaleString("vi-VN")}
                     </td>
                     <td className="px-5 py-4">
                       <select
                         value={row.status}
                         onChange={(e) => updateStatus.mutate({ id: row.id, status: e.target.value })}
-                        className="border border-zenova-ink/20 bg-transparent px-2 py-1 text-xs text-zenova-ink focus:border-zenova-gold focus:outline-none"
+                        className="border border-chronos-ink/20 bg-transparent px-2 py-1 text-xs text-chronos-ink focus:border-chronos-gold focus:outline-none"
                       >
                         {STATUSES.map((s) => (
                           <option key={s} value={s}>

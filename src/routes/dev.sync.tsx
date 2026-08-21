@@ -6,17 +6,17 @@ export const Route = createFileRoute("/dev/sync")({
   component: SyncStatusPage,
   head: () => ({
     meta: [
-      { title: "Trạng thái sync GitHub | Zenova Cruise" },
+      { title: "Trạng thái sync GitHub | Chronos Cruise" },
       {
         name: "description",
         content:
-          "Trang nội bộ hiển thị commit cuối cùng đã được đẩy và thời điểm đồng bộ gần nhất của website Zenova Cruise.",
+          "Trang nội bộ hiển thị commit cuối cùng đã được đẩy và thời điểm đồng bộ gần nhất của website Chronos Cruise.",
       },
       { name: "robots", content: "noindex, nofollow" },
-      { property: "og:title", content: "Trạng thái sync GitHub | Zenova Cruise" },
+      { property: "og:title", content: "Trạng thái sync GitHub | Chronos Cruise" },
       {
         property: "og:description",
-        content: "Commit cuối cùng và thời điểm đồng bộ gần nhất của Zenova Cruise.",
+        content: "Commit cuối cùng và thời điểm đồng bộ gần nhất của Chronos Cruise.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },

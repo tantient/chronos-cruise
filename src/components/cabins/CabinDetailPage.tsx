@@ -46,7 +46,7 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
   ];
 
   return (
-    <div className="min-h-screen bg-zenova-ivory">
+    <div className="min-h-screen bg-chronos-ivory">
       <Header lang={lang} setLang={setLang} t={t} />
 
       <main>
@@ -56,24 +56,24 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
             alt={vi ? cabin.nameVi : cabin.nameEn}
             className="h-full w-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-zenova-ink/85 via-zenova-ink/30 to-zenova-ink/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-chronos-ink/85 via-chronos-ink/30 to-chronos-ink/40" />
           <div className="absolute inset-0 flex items-end">
             <div className="mx-auto w-full max-w-7xl px-6 pb-16 lg:px-8">
               <Link
                 to="/cabins"
-                className="eyebrow mb-5 inline-block text-zenova-gold hover:text-zenova-gold/80"
+                className="eyebrow mb-5 inline-block text-chronos-gold hover:text-chronos-gold/80"
               >
                 ← {vi ? "PHÒNG NGHỈ" : "CABINS"}
               </Link>
-              <h1 className="max-w-3xl text-4xl tracking-[0.02em] text-zenova-ivory sm:text-5xl">
+              <h1 className="max-w-3xl text-4xl tracking-[0.02em] text-chronos-ivory sm:text-5xl">
                 {vi ? cabin.nameVi : cabin.nameEn}
               </h1>
               {cabin.code ? (
-                <p className="mt-3 text-xs uppercase tracking-[0.24em] text-zenova-gold">
+                <p className="mt-3 text-xs uppercase tracking-[0.24em] text-chronos-gold">
                   {cabin.code}
                 </p>
               ) : null}
-              <p className="mt-3 max-w-xl text-zenova-ivory/85">
+              <p className="mt-3 max-w-xl text-chronos-ivory/85">
                 {cabin.vip
                   ? vi
                     ? `${cabin.area} tổng diện tích riêng`
@@ -82,7 +82,7 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
                 · {cabin.view}
               </p>
               {cabin.vip ? (
-                <p className="mt-2 max-w-xl text-xs leading-relaxed text-zenova-ivory/65">
+                <p className="mt-2 max-w-xl text-xs leading-relaxed text-chronos-ivory/65">
                   {vi ? AREA_NOTE_VI : AREA_NOTE_EN}
                 </p>
               ) : null}
@@ -93,47 +93,47 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
         <div className="mx-auto max-w-7xl space-y-20 px-6 py-20 lg:px-8 lg:py-28">
           <Reveal className="grid gap-10 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
             <div>
-              <p className="eyebrow mb-5 text-zenova-gold">{vi ? "MÔ TẢ" : "OVERVIEW"}</p>
-              <p className="mb-6 text-lg leading-relaxed text-zenova-stone/85">
+              <p className="eyebrow mb-5 text-chronos-gold">{vi ? "MÔ TẢ" : "OVERVIEW"}</p>
+              <p className="mb-6 text-lg leading-relaxed text-chronos-stone/85">
                 {vi ? cabin.descVi : cabin.descEn}
               </p>
               <ul className="space-y-3">
                 {(vi ? detail.highlightsVi : detail.highlightsEn).map((h) => (
-                  <li key={h} className="flex items-start gap-3 text-zenova-stone/85">
-                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-zenova-gold" />
+                  <li key={h} className="flex items-start gap-3 text-chronos-stone/85">
+                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-chronos-gold" />
                     {h}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <dl className="divide-y divide-zenova-ink/10 border-y border-zenova-ink/10">
+            <dl className="divide-y divide-chronos-ink/10 border-y border-chronos-ink/10">
               {specs.map((s) => (
                 <div key={s.label} className="flex items-baseline justify-between gap-6 py-4">
-                  <dt className="text-xs uppercase tracking-[0.24em] text-zenova-stone/70">
+                  <dt className="text-xs uppercase tracking-[0.24em] text-chronos-stone/70">
                     {s.label}
                   </dt>
-                  <dd className="text-right text-zenova-ink">{s.value}</dd>
+                  <dd className="text-right text-chronos-ink">{s.value}</dd>
                 </div>
               ))}
             </dl>
           </Reveal>
 
           {cabin.vip ? (
-            <p className="-mt-14 text-xs leading-relaxed text-zenova-stone/70">
+            <p className="-mt-14 text-xs leading-relaxed text-chronos-stone/70">
               {vi ? AREA_NOTE_VI : AREA_NOTE_EN}
             </p>
           ) : null}
 
           <Reveal>
-            <p className="eyebrow mb-5 text-zenova-gold">{vi ? "TIỆN NGHI" : "AMENITIES"}</p>
+            <p className="eyebrow mb-5 text-chronos-gold">{vi ? "TIỆN NGHI" : "AMENITIES"}</p>
             <ul className="grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
               {(vi ? cabin.amenitiesVi : cabin.amenitiesEn).map((a) => (
                 <li
                   key={a}
-                  className="flex items-start gap-2 border-b border-zenova-ink/10 pb-3 text-sm text-zenova-stone/85"
+                  className="flex items-start gap-2 border-b border-chronos-ink/10 pb-3 text-sm text-chronos-stone/85"
                 >
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zenova-gold" />
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-chronos-gold" />
                   {a}
                 </li>
               ))}
@@ -141,7 +141,7 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
           </Reveal>
 
           <Reveal>
-            <p className="eyebrow mb-5 text-zenova-gold">{vi ? "SƠ ĐỒ BỐ TRÍ" : "FLOOR PLAN"}</p>
+            <p className="eyebrow mb-5 text-chronos-gold">{vi ? "SƠ ĐỒ BỐ TRÍ" : "FLOOR PLAN"}</p>
             <DeckPlanProvider>
               <DeckPlan
                 zones={detail.layout}
@@ -156,7 +156,7 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
           </Reveal>
 
           <Reveal>
-            <p className="eyebrow mb-5 text-zenova-gold">{vi ? "HÌNH ẢNH" : "GALLERY"}</p>
+            <p className="eyebrow mb-5 text-chronos-gold">{vi ? "HÌNH ẢNH" : "GALLERY"}</p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {[cabin.hero, ...cabin.gallery].map((src, i) => (
                 <img
@@ -170,21 +170,21 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
             </div>
           </Reveal>
 
-          <Reveal className="border-t border-zenova-ink/10 pt-16">
+          <Reveal className="border-t border-chronos-ink/10 pt-16">
             <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
               <div>
-                <h2 className="mb-3 text-2xl tracking-[0.02em] text-zenova-ink sm:text-3xl">
+                <h2 className="mb-3 text-2xl tracking-[0.02em] text-chronos-ink sm:text-3xl">
                   {vi ? "Quan tâm hạng phòng này?" : "Interested in this cabin?"}
                 </h2>
-                <p className="max-w-xl text-zenova-stone/85">
+                <p className="max-w-xl text-chronos-stone/85">
                   {vi
-                    ? "Để lại thông tin, đội ngũ Zenova sẽ tư vấn và báo giá trong 24 giờ."
+                    ? "Để lại thông tin, đội ngũ Chronos sẽ tư vấn và báo giá trong 24 giờ."
                     : "Leave your details and our team will advise and quote within 24 hours."}
                 </p>
               </div>
               <Button
                 asChild
-                className="btn-sheen rounded-none bg-zenova-gold px-8 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ink hover:bg-zenova-gold/90"
+                className="btn-sheen rounded-none bg-chronos-gold px-8 text-xs font-semibold uppercase tracking-[0.18em] text-chronos-ink hover:bg-chronos-gold/90"
               >
                 <a href={QUOTE_LINK} target="_blank" rel="noopener noreferrer">
                   {vi ? "Liên hệ báo giá" : "Request a quote"}
@@ -198,7 +198,7 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
                   key={o.id}
                   to="/cabins/$cabinId"
                   params={{ cabinId: o.id }}
-                  className="group grid grid-cols-[110px_1fr] items-center gap-4 rounded-sm border border-zenova-ink/10 p-3 transition-colors hover:border-zenova-gold/60"
+                  className="group grid grid-cols-[110px_1fr] items-center gap-4 rounded-sm border border-chronos-ink/10 p-3 transition-colors hover:border-chronos-gold/60"
                 >
                   <img
                     src={o.hero}
@@ -207,13 +207,13 @@ export function CabinDetailPage({ cabin }: { cabin: CabinType }) {
                     className="aspect-[4/3] w-full rounded-sm object-cover"
                   />
                   <div>
-                    <p className="text-xs uppercase tracking-[0.24em] text-zenova-stone/70">
+                    <p className="text-xs uppercase tracking-[0.24em] text-chronos-stone/70">
                       {vi ? "Hạng phòng khác" : "Other cabin"}
                     </p>
-                    <p className="mt-1 text-lg text-zenova-ink group-hover:text-zenova-gold">
+                    <p className="mt-1 text-lg text-chronos-ink group-hover:text-chronos-gold">
                       {vi ? o.nameVi : o.nameEn}
                     </p>
-                    <p className="text-sm text-zenova-stone/75">
+                    <p className="text-sm text-chronos-stone/75">
                       {o.code ? `${o.code} · ` : ""}
                       {o.area} · {o.view}
                     </p>

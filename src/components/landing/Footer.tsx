@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, MessageCircle } from "lucide-react";
 
-import { ZenovaLogo } from "./ZenovaLogo";
+import { ChronosLogo } from "./ChronosLogo";
 
 interface FooterProps {
   t: {
@@ -38,24 +38,24 @@ export function Footer({ t }: FooterProps) {
   ];
 
   return (
-    <footer className="border-t border-zenova-sand-300/20 bg-zenova-ivory">
+    <footer className="border-t border-chronos-sand-300/20 bg-chronos-ivory">
       <div className="mx-auto max-w-7xl px-5 py-16 md:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-12 text-center">
-          <div className="font-display text-4xl font-normal tracking-[0.25em] text-zenova-sand-900">
-            ZENOVA
+          <div className="font-display text-4xl font-normal tracking-[0.25em] text-chronos-sand-900">
+            CHRONOS
           </div>
 
-          <p className="text-xs uppercase tracking-[0.32em] text-zenova-sand-700">
+          <p className="text-xs uppercase tracking-[0.32em] text-chronos-sand-700">
             {t.footer.tagline}
           </p>
 
-          <nav className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-xs uppercase tracking-[0.2em] text-zenova-sand-700">
+          <nav className="flex flex-wrap justify-center gap-x-12 gap-y-4 text-xs uppercase tracking-[0.2em] text-chronos-sand-700">
             {quickLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.to}
                 {...(link.params ? { params: link.params } : {})}
-                className="transition-colors hover:text-zenova-sand-500"
+                className="transition-colors hover:text-chronos-sand-500"
               >
                 {link.label}
               </Link>
@@ -70,14 +70,14 @@ export function Footer({ t }: FooterProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-zenova-sand-300/30 text-zenova-sand-700 transition-colors hover:border-zenova-sand-500 hover:text-zenova-sand-500"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-chronos-sand-300/30 text-chronos-sand-700 transition-colors hover:border-chronos-sand-500 hover:text-chronos-sand-500"
               >
                 <Icon className="h-4 w-4" strokeWidth={1.5} />
               </a>
             ))}
           </div>
 
-          <div className="text-xs tracking-wide text-zenova-sand-700/60">
+          <div className="text-xs tracking-wide text-chronos-sand-700/60">
             {t.footer.rights}
           </div>
         </div>

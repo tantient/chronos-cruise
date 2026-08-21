@@ -18,7 +18,7 @@ export const Route = createFileRoute("/cabins/$cabinId")({
       };
     }
     const { cabin } = loaderData;
-    const title = `${cabin.nameEn} | Zenova Cruise`;
+    const title = `${cabin.nameEn} | Chronos Cruise`;
     const desc = cabin.descEn.slice(0, 155);
     return {
       meta: [

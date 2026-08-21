@@ -10,15 +10,15 @@ import { Label } from "@/components/ui/label";
 export const Route = createFileRoute("/auth")({
   head: () => ({
     meta: [
-      { title: "Đăng nhập quản trị — Zenova Cruise" },
+      { title: "Đăng nhập quản trị — Chronos Cruise" },
       {
         name: "description",
-        content: "Khu vực đăng nhập dành cho quản trị viên Zenova Cruise để quản lý hồ sơ ứng tuyển.",
+        content: "Khu vực đăng nhập dành cho quản trị viên Chronos Cruise để quản lý hồ sơ ứng tuyển.",
       },
-      { property: "og:title", content: "Đăng nhập quản trị — Zenova Cruise" },
+      { property: "og:title", content: "Đăng nhập quản trị — Chronos Cruise" },
       {
         property: "og:description",
-        content: "Khu vực đăng nhập dành cho quản trị viên Zenova Cruise.",
+        content: "Khu vực đăng nhập dành cho quản trị viên Chronos Cruise.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -65,16 +65,16 @@ function AuthPage() {
   };
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-zenova-ivory px-6 py-16">
-      <div className="w-full max-w-md border border-zenova-ink/10 bg-card p-8 shadow-sm">
-        <h1 className="mb-2 text-2xl tracking-[0.02em] text-zenova-ink">Quản trị Zenova</h1>
-        <p className="mb-8 text-sm text-zenova-stone/80">
+    <main className="flex min-h-screen items-center justify-center bg-chronos-ivory px-6 py-16">
+      <div className="w-full max-w-md border border-chronos-ink/10 bg-card p-8 shadow-sm">
+        <h1 className="mb-2 text-2xl tracking-[0.02em] text-chronos-ink">Quản trị Chronos</h1>
+        <p className="mb-8 text-sm text-chronos-stone/80">
           {mode === "signin" ? "Đăng nhập để xem hồ sơ ứng tuyển." : "Tạo tài khoản quản trị."}
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-xs uppercase tracking-[0.24em] text-zenova-stone/70">
+            <Label htmlFor="email" className="text-xs uppercase tracking-[0.24em] text-chronos-stone/70">
               Email
             </Label>
             <Input
@@ -83,11 +83,11 @@ function AuthPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="field-underline border-zenova-ink/20 text-zenova-ink focus:border-zenova-gold"
+              className="field-underline border-chronos-ink/20 text-chronos-ink focus:border-chronos-gold"
             />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="password" className="text-xs uppercase tracking-[0.24em] text-zenova-stone/70">
+            <Label htmlFor="password" className="text-xs uppercase tracking-[0.24em] text-chronos-stone/70">
               Mật khẩu
             </Label>
             <Input
@@ -97,13 +97,13 @@ function AuthPage() {
               onChange={(e) => setPassword(e.target.value)}
               required
               minLength={6}
-              className="field-underline border-zenova-ink/20 text-zenova-ink focus:border-zenova-gold"
+              className="field-underline border-chronos-ink/20 text-chronos-ink focus:border-chronos-gold"
             />
           </div>
           <Button
             type="submit"
             disabled={loading}
-            className="w-full rounded-none bg-zenova-gold text-xs font-semibold uppercase tracking-[0.2em] text-zenova-ink hover:bg-zenova-gold/90"
+            className="w-full rounded-none bg-chronos-gold text-xs font-semibold uppercase tracking-[0.2em] text-chronos-ink hover:bg-chronos-gold/90"
           >
             {mode === "signin" ? "Đăng nhập" : "Đăng ký"}
           </Button>
@@ -112,7 +112,7 @@ function AuthPage() {
         <button
           type="button"
           onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
-          className="mt-6 w-full text-center text-xs uppercase tracking-[0.18em] text-zenova-stone/70 hover:text-zenova-ink"
+          className="mt-6 w-full text-center text-xs uppercase tracking-[0.18em] text-chronos-stone/70 hover:text-chronos-ink"
         >
           {mode === "signin" ? "Chưa có tài khoản? Đăng ký" : "Đã có tài khoản? Đăng nhập"}
         </button>

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { getT, type Lang } from "@/lib/translations";
 
-const STORAGE_KEY = "zenova-lang";
+const STORAGE_KEY = "chronos-lang";
 
 export function useLanguage() {
   const [lang, setLangState] = useState<Lang>("vi");
