@@ -217,9 +217,9 @@ export function Header({ lang, setLang, t }: HeaderProps) {
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? (
-            <X className={`h-6 w-6 ${scrolled ? "text-zenova-ink" : "text-zenova-ivory"}`} />
+            <X className={`h-6 w-6 ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`} />
           ) : (
-            <Menu className={`h-6 w-6 ${scrolled ? "text-zenova-ink" : "text-zenova-ivory"}`} />
+            <Menu className={`h-6 w-6 ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`} />
           )}
         </button>
       </div>
