@@ -1,8 +1,8 @@
-import stackedSrc from "@/assets/logo/chronos-stacked.png";
-import stackedPlainSrc from "@/assets/logo/chronos-stacked-plain.png";
-import markSrc from "@/assets/logo/chronos-mark.png";
-import wordmarkSrc from "@/assets/logo/chronos-wordmark.png";
-import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.png";
+import stackedSrc from "@/assets/logo/chronos-stacked.svg";
+import stackedPlainSrc from "@/assets/logo/chronos-stacked-plain.svg";
+import markSrc from "@/assets/logo/chronos-mark.svg";
+import wordmarkSrc from "@/assets/logo/chronos-wordmark.svg";
+import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.svg";
 
 type LogoVariant = "inline" | "stacked";
 type LogoSize = "sm" | "md" | "lg";
@@ -35,11 +35,11 @@ interface ChronosLogoProps extends React.HTMLAttributes<HTMLSpanElement> {
 }
 
 const RATIO = {
-  stacked: 1748 / 1200,
-  stackedPlain: 1748 / 1090,
-  mark: 1621 / 1200,
-  wordmark: 6906 / 1200,
-  wordmarkPlain: 6906 / 766,
+  stacked: 920 / 632,
+  stackedPlain: 920 / 575,
+  mark: 574 / 425,
+  wordmark: 920 / 161,
+  wordmarkPlain: 920 / 104,
 };
 
 /** Chiều cao chuẩn (mobile → desktop) cho từng biến thể. */
@@ -59,8 +59,8 @@ const SIZE_CLASSES: Record<LogoVariant, Record<LogoSize, string>> = {
 /** Mask hoá logo gốc để tự đổi màu theo currentColor. */
 function maskStyle(src: string, ratio: number): React.CSSProperties {
   return {
-    WebkitMaskImage: `url(${src})`,
-    maskImage: `url(${src})`,
+    WebkitMaskImage: `url("${src}")`,
+    maskImage: `url("${src}")`,
     WebkitMaskRepeat: "no-repeat",
     maskRepeat: "no-repeat",
     WebkitMaskPosition: "center",
