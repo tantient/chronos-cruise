@@ -43,10 +43,11 @@ export function Footer({ t }: FooterProps) {
         <div className="flex flex-col items-center gap-12 text-center">
           <ChronosLogo
             variant="stacked"
-            showTagline
-            className="h-24 text-[15px] text-chronos-sand-900"
+            showTagline={false}
+            className="h-24 text-[16px] text-chronos-sand-900"
             aria-label="Chronos Cruise"
           />
+
 
           <p className="text-xs uppercase tracking-[0.32em] text-chronos-sand-700">
             {t.footer.tagline}
