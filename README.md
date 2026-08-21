@@ -1,6 +1,6 @@
-# Zenova Cruise: Luxury Ha Long
+# Chronos Cruise: Luxury Ha Long
 
-tao muốn làm 1 logo cho du thuyền 6* ở hạ long, tên là zenova cruise, mày có ý tưởng gì ko
+tao muốn làm 1 logo cho du thuyền 6* ở hạ long, tên là chronos cruise, mày có ý tưởng gì ko
 
 This project was built with [Lovable](https://lovable.dev).
 
