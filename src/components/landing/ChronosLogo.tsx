@@ -1,6 +1,6 @@
 import stackedSrc from "@/assets/logo/chronos-stacked.svg";
 import stackedPlainSrc from "@/assets/logo/chronos-stacked-plain.svg";
-import markSrc from "@/assets/logo/chronos-mark.svg?url";
+import markSrc from "@/assets/logo/chronos-mark.svg";
 import wordmarkSrc from "@/assets/logo/chronos-wordmark.svg";
 import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.svg";
 
