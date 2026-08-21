@@ -1,30 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { LandingPage } from "@/components/landing/LandingPage";
+import { pageSeo } from "@/lib/seo";
 import heroAsset from "@/assets/chronos-hero.jpg";
 
-const SITE_URL = "https://id-preview--67e85459-3f1f-495d-9299-f47f73a8c85d.lovable.app";
+const TITLE = "Chronos Cruise | Sắp ra mắt - Du thuyền 6 sao Hạ Long - Lan Hạ";
+const DESC =
+  "Chronos Cruise sắp ra mắt. Đăng ký để là người đầu tiên nhận thông tin về trải nghiệm du thuyền 6 sao tại vịnh Hạ Long và Lan Hạ.";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Chronos Cruise | Sắp ra mắt - Du thuyền 6 sao Hạ Long - Lan Hạ" },
-      {
-        name: "description",
-        content:
-          "Chronos Cruise sắp ra mắt. Đăng ký để là người đầu tiên nhận thông tin về trải nghiệm du thuyền 6 sao tại vịnh Hạ Long và Lan Hạ.",
-      },
-      { property: "og:title", content: "Chronos Cruise | Sắp ra mắt - Du thuyền 6 sao Hạ Long - Lan Hạ" },
-      {
-        property: "og:description",
-        content:
-          "Chronos Cruise sắp ra mắt. Đăng ký để nhận thông tin và ưu đãi đầu tiên.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:image", content: `${SITE_URL}${heroAsset}` },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: `${SITE_URL}${heroAsset}` },
-    ],
-  }),
+  head: () => pageSeo({ title: TITLE, description: DESC, path: "/", image: heroAsset }),
   component: LandingPage,
 });
+
