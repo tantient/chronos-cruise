@@ -15,7 +15,7 @@ import { jobPositions } from "@/components/careers/careers-data";
 import type { Lang } from "@/lib/translations";
 
 import { Reveal } from "./Reveal";
-import recruitImage from "@/assets/gallery/chronos-public-reception.jpg";
+import recruitImage from "@/assets/gallery/chronos-public-reception.webp";
 
 interface RecruitTeaserProps {
   lang: Lang;

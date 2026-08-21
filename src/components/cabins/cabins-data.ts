@@ -1,15 +1,15 @@
-import suite01 from "@/assets/gallery/chronos-suite-01.jpg";
-import suite02 from "@/assets/gallery/chronos-suite-02.jpg";
-import suite03 from "@/assets/gallery/chronos-suite-03.jpg";
-import deluxe01 from "@/assets/gallery/chronos-deluxe-01.jpg";
-import deluxe02 from "@/assets/gallery/chronos-deluxe-02.jpg";
-import standard01 from "@/assets/gallery/chronos-standard-01.jpg";
-import standard02 from "@/assets/gallery/chronos-standard-02.jpg";
-import standard03 from "@/assets/gallery/chronos-standard-03.jpg";
-import standard04 from "@/assets/gallery/chronos-standard-04.jpg";
-import bath01 from "@/assets/gallery/chronos-bath-01.jpg";
-import bath02 from "@/assets/gallery/chronos-bath-02.jpg";
-import corridor from "@/assets/gallery/chronos-corridor.jpg";
+import suite01 from "@/assets/gallery/chronos-suite-01.webp";
+import suite02 from "@/assets/gallery/chronos-suite-02.webp";
+import suite03 from "@/assets/gallery/chronos-suite-03.webp";
+import deluxe01 from "@/assets/gallery/chronos-deluxe-01.webp";
+import deluxe02 from "@/assets/gallery/chronos-deluxe-02.webp";
+import standard01 from "@/assets/gallery/chronos-standard-01.webp";
+import standard02 from "@/assets/gallery/chronos-standard-02.webp";
+import standard03 from "@/assets/gallery/chronos-standard-03.webp";
+import standard04 from "@/assets/gallery/chronos-standard-04.webp";
+import bath01 from "@/assets/gallery/chronos-bath-01.webp";
+import bath02 from "@/assets/gallery/chronos-bath-02.webp";
+import corridor from "@/assets/gallery/chronos-corridor.webp";
 
 export const TOTAL_CABINS = 44;
 

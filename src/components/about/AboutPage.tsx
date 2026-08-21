@@ -6,9 +6,9 @@ import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { useLanguage } from "@/components/landing/use-language";
 import { Reveal } from "@/components/landing/Reveal";
-import exteriorImg from "@/assets/gallery/chronos-exterior-01.jpg";
-import lobbyImg from "@/assets/gallery/chronos-public-lobby-01.jpg";
-import diningImg from "@/assets/gallery/chronos-dining-panorama-01.jpg";
+import exteriorImg from "@/assets/gallery/chronos-exterior-01.webp";
+import lobbyImg from "@/assets/gallery/chronos-public-lobby-01.webp";
+import diningImg from "@/assets/gallery/chronos-dining-panorama-01.webp";
 
 const featureIcons: LucideIcon[] = [Waves, ChefHat, ConciergeBell, Anchor];
 const valueIcons: LucideIcon[] = [Heart, ShieldCheck, Leaf, Anchor];

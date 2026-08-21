@@ -1,6 +1,6 @@
-import imgSuite from "@/assets/gallery/chronos-suite-01.jpg";
-import imgDining from "@/assets/gallery/chronos-dining-panorama-01.jpg";
-import imgDeck from "@/assets/gallery/chronos-deck-sunset-02.jpg";
+import imgSuite from "@/assets/gallery/chronos-suite-01.webp";
+import imgDining from "@/assets/gallery/chronos-dining-panorama-01.webp";
+import imgDeck from "@/assets/gallery/chronos-deck-sunset-02.webp";
 
 export interface Offer {
   id: string;
