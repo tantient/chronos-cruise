@@ -290,7 +290,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               </button>
               <ThemeToggle className="border-zenova-ink/15 text-zenova-ink hover:bg-zenova-ink/5" />
             </div>
-            <Button asChild className="btn-sheen rounded-none bg-zenova-gold text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ink hover:bg-zenova-gold/90">
+            <Button asChild className="btn-sheen rounded-none bg-zenova-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ivory hover:bg-zenova-sand-700">
               <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
                 {t.nav.book}
               </a>
