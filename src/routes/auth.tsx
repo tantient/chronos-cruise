@@ -8,24 +8,20 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+const AUTH_SEO = pageSeo({
+  title: "Đăng nhập quản trị | Chronos Cruise",
+  description: "Khu vực đăng nhập dành cho quản trị viên Chronos Cruise để quản lý hồ sơ ứng tuyển.",
+  path: "/auth",
+});
+
 export const Route = createFileRoute("/auth")({
   head: () => ({
-    ...pageSeo({
-      title: "Đăng nhập quản trị | Chronos Cruise",
-      description: "Khu vực đăng nhập dành cho quản trị viên Chronos Cruise để quản lý hồ sơ ứng tuyển.",
-      path: "/auth",
-    }),
-    meta: [
-      ...pageSeo({
-        title: "Đăng nhập quản trị | Chronos Cruise",
-        description: "Khu vực đăng nhập dành cho quản trị viên Chronos Cruise để quản lý hồ sơ ứng tuyển.",
-        path: "/auth",
-      }).meta,
-      { name: "robots", content: "noindex, nofollow" },
-    ],
+    ...AUTH_SEO,
+    meta: [...AUTH_SEO.meta, { name: "robots", content: "noindex, nofollow" }],
   }),
   component: AuthPage,
 });
+
 
 function AuthPage() {
   const navigate = useNavigate();
