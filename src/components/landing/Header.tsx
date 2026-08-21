@@ -275,7 +275,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               <button
                 onClick={() => setLang("vi")}
                 className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                  lang === "vi" ? "bg-zenova-ink text-zenova-ivory" : "text-zenova-ink/70"
+                  lang === "vi" ? "bg-zenova-sand-900 text-zenova-ivory" : "text-zenova-sand-900/70"
                 }`}
               >
                 VI
@@ -283,12 +283,12 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               <button
                 onClick={() => setLang("en")}
                 className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                  lang === "en" ? "bg-zenova-ink text-zenova-ivory" : "text-zenova-ink/70"
+                  lang === "en" ? "bg-zenova-sand-900 text-zenova-ivory" : "text-zenova-sand-900/70"
                 }`}
               >
                 EN
               </button>
-              <ThemeToggle className="border-zenova-ink/15 text-zenova-ink hover:bg-zenova-ink/5" />
+              <ThemeToggle className="border-zenova-sand-900/15 text-zenova-sand-900 hover:bg-zenova-sand-900/5" />
             </div>
             <Button asChild className="btn-sheen rounded-none bg-zenova-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ivory hover:bg-zenova-sand-700">
               <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
