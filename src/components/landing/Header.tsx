@@ -161,7 +161,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
         <div className="hidden items-center gap-3 md:flex">
           <div
             className={`flex items-center rounded-full border p-1 ${
-              scrolled ? "border-zenova-ink/20" : "border-zenova-ivory/30"
+              scrolled ? "border-zenova-sand-900/20" : "border-zenova-ivory/30"
             }`}
           >
             <button
@@ -169,10 +169,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                 lang === "vi"
                   ? scrolled
-                    ? "bg-zenova-ink text-zenova-ivory"
-                    : "bg-zenova-ivory text-zenova-ink"
+                    ? "bg-zenova-sand-900 text-zenova-ivory"
+                    : "bg-zenova-ivory text-zenova-sand-900"
                   : scrolled
-                    ? "text-zenova-ink/70 hover:text-zenova-ink"
+                    ? "text-zenova-sand-900/70 hover:text-zenova-sand-900"
                     : "text-zenova-ivory/80 hover:text-zenova-ivory"
               }`}
               aria-label="Tiếng Việt"
@@ -184,10 +184,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                 lang === "en"
                   ? scrolled
-                    ? "bg-zenova-ink text-zenova-ivory"
-                    : "bg-zenova-ivory text-zenova-ink"
+                    ? "bg-zenova-sand-900 text-zenova-ivory"
+                    : "bg-zenova-ivory text-zenova-sand-900"
                   : scrolled
-                    ? "text-zenova-ink/70 hover:text-zenova-ink"
+                    ? "text-zenova-sand-900/70 hover:text-zenova-sand-900"
                     : "text-zenova-ivory/80 hover:text-zenova-ivory"
               }`}
               aria-label="English"
@@ -199,12 +199,12 @@ export function Header({ lang, setLang, t }: HeaderProps) {
           <ThemeToggle
             className={
               scrolled
-                ? "border-zenova-ink/20 text-zenova-ink hover:bg-zenova-ink/5"
+                ? "border-zenova-sand-900/20 text-zenova-sand-900 hover:bg-zenova-sand-900/5"
                 : "border-zenova-ivory/30 text-zenova-ivory hover:bg-zenova-ivory/10"
             }
           />
 
-          <Button asChild className="btn-sheen rounded-none bg-zenova-gold text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ink hover:bg-zenova-gold/90">
+          <Button asChild className="btn-sheen rounded-none bg-zenova-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ivory hover:bg-zenova-sand-700">
             <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
               {t.nav.book}
             </a>
