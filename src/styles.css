@@ -215,16 +215,17 @@
 
 }
 
-/* Brand typography (logo lockup) */
+/* Brand typography */
 @utility font-display {
-  font-family: "Cormorant Garamond", "Times New Roman", serif;
+  font-family: var(--font-display);
   font-weight: 400;
 }
 
 @utility font-body {
-  font-family: "Jura", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
 }
+
 
 /* Hero slideshow: zoom rất chậm (Ken Burns) */
 @keyframes hero-kenburns {
