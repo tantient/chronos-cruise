@@ -18,6 +18,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ItinerariesRouteImport } from './routes/itineraries'
 import { Route as OffersRouteImport } from './routes/offers'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as CabinsIndexRouteImport } from './routes/cabins.index'
 import { Route as CabinsCabinIdRouteImport } from './routes/cabins.$cabinId'
 import { Route as DevSyncRouteImport } from './routes/dev.sync'
@@ -68,6 +69,11 @@ const OffersRoute = OffersRouteImport.update({
   path: '/offers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CabinsIndexRoute = CabinsIndexRouteImport.update({
   id: '/cabins/',
   path: '/cabins/',
@@ -104,6 +110,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/itineraries': typeof ItinerariesRoute
   '/offers': typeof OffersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/cabins/$cabinId': typeof CabinsCabinIdRoute
   '/dev/sync': typeof DevSyncRoute
   '/services/$serviceId': typeof ServicesServiceIdRoute
@@ -119,6 +126,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/itineraries': typeof ItinerariesRoute
   '/offers': typeof OffersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/cabins/$cabinId': typeof CabinsCabinIdRoute
   '/dev/sync': typeof DevSyncRoute
   '/services/$serviceId': typeof ServicesServiceIdRoute
@@ -136,6 +144,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/itineraries': typeof ItinerariesRoute
   '/offers': typeof OffersRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/cabins/$cabinId': typeof CabinsCabinIdRoute
   '/dev/sync': typeof DevSyncRoute
   '/services/$serviceId': typeof ServicesServiceIdRoute
@@ -153,6 +162,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/itineraries'
     | '/offers'
+    | '/sitemap.xml'
     | '/cabins/$cabinId'
     | '/dev/sync'
     | '/services/$serviceId'
@@ -168,6 +178,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/itineraries'
     | '/offers'
+    | '/sitemap.xml'
     | '/cabins/$cabinId'
     | '/dev/sync'
     | '/services/$serviceId'
@@ -184,6 +195,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/itineraries'
     | '/offers'
+    | '/sitemap.xml'
     | '/cabins/$cabinId'
     | '/dev/sync'
     | '/services/$serviceId'
@@ -201,6 +213,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   ItinerariesRoute: typeof ItinerariesRoute
   OffersRoute: typeof OffersRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   CabinsCabinIdRoute: typeof CabinsCabinIdRoute
   DevSyncRoute: typeof DevSyncRoute
   ServicesServiceIdRoute: typeof ServicesServiceIdRoute
@@ -272,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OffersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/cabins/': {
       id: '/cabins/'
       path: '/cabins'
@@ -331,6 +351,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   ItinerariesRoute: ItinerariesRoute,
   OffersRoute: OffersRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   CabinsCabinIdRoute: CabinsCabinIdRoute,
   DevSyncRoute: DevSyncRoute,
   ServicesServiceIdRoute: ServicesServiceIdRoute,
