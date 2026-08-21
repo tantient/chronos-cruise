@@ -69,6 +69,15 @@
   --color-zenova-warm: var(--zenova-warm);
   --color-zenova-deep: var(--zenova-deep);
   --color-zenova-cream: var(--zenova-cream);
+  --color-zenova-sand-50: var(--zenova-sand-50);
+  --color-zenova-sand-100: var(--zenova-sand-100);
+  --color-zenova-sand-300: var(--zenova-sand-300);
+  --color-zenova-sand-500: var(--zenova-sand-500);
+  --color-zenova-sand-700: var(--zenova-sand-700);
+  --color-zenova-sand-900: var(--zenova-sand-900);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
 }
 
 :root {
