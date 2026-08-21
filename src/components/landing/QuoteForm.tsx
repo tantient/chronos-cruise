@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { toast } from "sonner";
-import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -20,10 +19,12 @@ interface QuoteFormProps {
       name: string;
       phone: string;
       email: string;
-      date: string;
       message: string;
       submit: string;
       success: string;
+    };
+    footer: {
+      contact: string[];
     };
   };
 }
@@ -34,39 +35,33 @@ export function QuoteForm({ t }: QuoteFormProps) {
     name: "",
     phone: "",
     email: "",
-    date: "",
     message: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success(tr.success);
-    setValues({ name: "", phone: "", email: "", date: "", message: "" });
+    setValues({ name: "", phone: "", email: "", message: "" });
   };
 
   return (
-    <section id="quote" className="section-cream py-28 lg:py-36">
-      <div className="mx-auto max-w-4xl px-6 lg:px-8">
-        <Reveal className="mb-16 text-center">
-          <p className="eyebrow mb-6 justify-center text-zenova-gold-ink">{tr.label}</p>
-          <h2 className="mb-4 text-5xl font-light tracking-[0.01em] text-zenova-ink sm:text-6xl md:text-7xl">
-            {tr.title.split(" ").slice(0, -1).join(" ")}{" "}
-            <span className="font-display italic text-zenova-gold-ink">
-              {tr.title.split(" ").slice(-1)}
-            </span>
-          </h2>
-          <p className="text-sm uppercase tracking-[0.2em] text-zenova-ink/70">{tr.subtitle}</p>
-        </Reveal>
+    <section id="quote" className="bg-zenova-ivory py-24 lg:py-32">
+      <div className="mx-auto max-w-5xl px-6 lg:px-8">
+        <div className="grid gap-16 md:grid-cols-5 md:gap-20">
+          <Reveal className="md:col-span-2 space-y-8">
+            <p className="text-xs uppercase tracking-[0.3em] text-zenova-sand-500">{tr.label}</p>
+            <h2 className="font-display text-4xl font-normal text-zenova-sand-900">{tr.title}</h2>
+            <p className="leading-relaxed text-zenova-sand-700">{tr.subtitle}</p>
+            <div className="space-y-4 pt-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-zenova-sand-500">Hotline</p>
+              <p className="text-xl font-light text-zenova-sand-900">{t.footer.contact[0]}</p>
+            </div>
+          </Reveal>
 
-        <Reveal
-          as="form"
-          onSubmit={handleSubmit}
-          className="mx-auto w-full"
-        >
-          <div className="grid gap-12 sm:grid-cols-2">
-            <div className="space-y-8">
-              <div className="border-b border-zenova-ink/10 pb-4">
-                <Label htmlFor="quote-name" className="text-xs uppercase tracking-[0.24em] text-zenova-ink/70">
+          <Reveal as="form" onSubmit={handleSubmit} className="md:col-span-3">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2">
+              <div className="space-y-1">
+                <Label htmlFor="quote-name" className="text-xs uppercase tracking-[0.2em] text-zenova-sand-500">
                   {tr.name}
                 </Label>
                 <Input
@@ -74,61 +69,45 @@ export function QuoteForm({ t }: QuoteFormProps) {
                   value={values.name}
                   onChange={(e) => setValues((v) => ({ ...v, name: e.target.value }))}
                   required
-                  className="field-underline h-12 border-zenova-ink/10 text-lg text-zenova-ink placeholder:text-zenova-ink/20 focus:border-zenova-gold"
+                  className="field-underline h-12 border-zenova-sand-300/40 text-zenova-sand-900 transition-colors placeholder:text-zenova-sand-300/50 focus:border-zenova-sand-700"
                 />
               </div>
-              <div className="border-b border-zenova-ink/10 pb-4">
-                <Label htmlFor="quote-email" className="text-xs uppercase tracking-[0.24em] text-zenova-ink/70">
-                  {tr.email}
+              <div className="space-y-1">
+                <Label htmlFor="quote-phone" className="text-xs uppercase tracking-[0.2em] text-zenova-sand-500">
+                  {tr.phone}
                 </Label>
                 <Input
-                  id="quote-email"
-                  type="email"
-                  value={values.email}
-                  onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
-                  className="field-underline h-12 border-zenova-ink/10 text-lg text-zenova-ink placeholder:text-zenova-ink/20 focus:border-zenova-gold"
+                  id="quote-phone"
+                  type="tel"
+                  value={values.phone}
+                  onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
+                  required
+                  className="field-underline h-12 border-zenova-sand-300/40 text-zenova-sand-900 transition-colors placeholder:text-zenova-sand-300/50 focus:border-zenova-sand-700"
                 />
               </div>
-            </div>
-
-            <div className="space-y-8">
-              <div className="border-b border-zenova-ink/10 pb-4">
-                <Label htmlFor="quote-date" className="text-xs uppercase tracking-[0.24em] text-zenova-ink/70">
-                  {tr.date}
+              <div className="space-y-1 sm:col-span-2">
+                <Label htmlFor="quote-message" className="text-xs uppercase tracking-[0.2em] text-zenova-sand-500">
+                  {tr.message}
                 </Label>
-                <Input
-                  id="quote-date"
-                  type="date"
-                  value={values.date}
-                  onChange={(e) => setValues((v) => ({ ...v, date: e.target.value }))}
-                  className="field-underline h-12 border-zenova-ink/10 text-lg text-zenova-ink placeholder:text-zenova-ink/20 focus:border-zenova-gold"
+                <Textarea
+                  id="quote-message"
+                  rows={2}
+                  value={values.message}
+                  onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
+                  className="field-underline border-zenova-sand-300/40 text-zenova-sand-900 transition-colors placeholder:text-zenova-sand-300/50 focus:border-zenova-sand-700"
                 />
               </div>
-              <Button
-                type="submit"
-                className="btn-sheen group h-14 w-full rounded-none bg-zenova-ink px-8 text-xs font-semibold uppercase tracking-[0.2em] text-zenova-ivory hover:bg-zenova-gold hover:text-zenova-ink"
-              >
-                <span className="relative z-10 flex w-full items-center justify-between">
+              <div className="sm:col-span-2 pt-4">
+                <Button
+                  type="submit"
+                  className="w-full rounded-none bg-zenova-sand-700 px-16 py-4 text-xs font-medium uppercase tracking-[0.2em] text-zenova-ivory transition-all duration-500 hover:bg-zenova-sand-900 md:w-auto"
+                >
                   {tr.submit}
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </Button>
+                </Button>
+              </div>
             </div>
-          </div>
-
-          <div className="mt-12 border-b border-zenova-ink/10 pb-4">
-            <Label htmlFor="quote-message" className="text-xs uppercase tracking-[0.24em] text-zenova-ink/70">
-              {tr.message}
-            </Label>
-            <Textarea
-              id="quote-message"
-              rows={3}
-              value={values.message}
-              onChange={(e) => setValues((v) => ({ ...v, message: e.target.value }))}
-              className="field-underline border-zenova-ink/10 text-lg text-zenova-ink placeholder:text-zenova-ink/20 focus:border-zenova-gold"
-            />
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
