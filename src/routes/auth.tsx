@@ -1,0 +1,122 @@
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
+
+import { supabase } from "@/integrations/supabase/client";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+
+export const Route = createFileRoute("/auth")({
+  head: () => ({
+    meta: [
+      { title: "Đăng nhập quản trị — Zenova Cruise" },
+      {
+        name: "description",
+        content: "Khu vực đăng nhập dành cho quản trị viên Zenova Cruise để quản lý hồ sơ ứng tuyển.",
+      },
+      { property: "og:title", content: "Đăng nhập quản trị — Zenova Cruise" },
+      {
+        property: "og:description",
+        content: "Khu vực đăng nhập dành cho quản trị viên Zenova Cruise.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: AuthPage,
+});
+
+function AuthPage() {
+  const navigate = useNavigate();
+  const [mode, setMode] = useState<"signin" | "signup">("signin");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    void supabase.auth.getSession().then(({ data }) => {
+      if (data.session) navigate({ to: "/admin/applications", replace: true });
+    });
+  }, [navigate]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      if (mode === "signup") {
+        const { error } = await supabase.auth.signUp({
+          email,
+          password,
+          options: { emailRedirectTo: `${window.location.origin}/admin/applications` },
+        });
+        if (error) throw error;
+        toast.success("Đã tạo tài khoản. Kiểm tra email nếu cần xác nhận.");
+      } else {
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+        if (error) throw error;
+        navigate({ to: "/admin/applications", replace: true });
+      }
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Đăng nhập thất bại");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <main className="flex min-h-screen items-center justify-center bg-zenova-ivory px-6 py-16">
+      <div className="w-full max-w-md border border-zenova-ink/10 bg-card p-8 shadow-sm">
+        <h1 className="mb-2 text-2xl tracking-[0.02em] text-zenova-ink">Quản trị Zenova</h1>
+        <p className="mb-8 text-sm text-zenova-stone/80">
+          {mode === "signin" ? "Đăng nhập để xem hồ sơ ứng tuyển." : "Tạo tài khoản quản trị."}
+        </p>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-xs uppercase tracking-[0.24em] text-zenova-stone/70">
+              Email
+            </Label>
+            <Input
+              id="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="field-underline border-zenova-ink/20 text-zenova-ink focus:border-zenova-gold"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="password" className="text-xs uppercase tracking-[0.24em] text-zenova-stone/70">
+              Mật khẩu
+            </Label>
+            <Input
+              id="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              minLength={6}
+              className="field-underline border-zenova-ink/20 text-zenova-ink focus:border-zenova-gold"
+            />
+          </div>
+          <Button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-none bg-zenova-gold text-xs font-semibold uppercase tracking-[0.2em] text-zenova-ink hover:bg-zenova-gold/90"
+          >
+            {mode === "signin" ? "Đăng nhập" : "Đăng ký"}
+          </Button>
+        </form>
+
+        <button
+          type="button"
+          onClick={() => setMode(mode === "signin" ? "signup" : "signin")}
+          className="mt-6 w-full text-center text-xs uppercase tracking-[0.18em] text-zenova-stone/70 hover:text-zenova-ink"
+        >
+          {mode === "signin" ? "Chưa có tài khoản? Đăng ký" : "Đã có tài khoản? Đăng nhập"}
+        </button>
+      </div>
+    </main>
+  );
+}
