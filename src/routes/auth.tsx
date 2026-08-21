@@ -2,30 +2,26 @@ import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 
+import { pageSeo } from "@/lib/seo";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
+const AUTH_SEO = pageSeo({
+  title: "Đăng nhập quản trị | Chronos Cruise",
+  description: "Khu vực đăng nhập dành cho quản trị viên Chronos Cruise để quản lý hồ sơ ứng tuyển.",
+  path: "/auth",
+});
+
 export const Route = createFileRoute("/auth")({
   head: () => ({
-    meta: [
-      { title: "Đăng nhập quản trị — Chronos Cruise" },
-      {
-        name: "description",
-        content: "Khu vực đăng nhập dành cho quản trị viên Chronos Cruise để quản lý hồ sơ ứng tuyển.",
-      },
-      { property: "og:title", content: "Đăng nhập quản trị — Chronos Cruise" },
-      {
-        property: "og:description",
-        content: "Khu vực đăng nhập dành cho quản trị viên Chronos Cruise.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
+    ...AUTH_SEO,
+    meta: [...AUTH_SEO.meta, { name: "robots", content: "noindex, nofollow" }],
   }),
   component: AuthPage,
 });
+
 
 function AuthPage() {
   const navigate = useNavigate();

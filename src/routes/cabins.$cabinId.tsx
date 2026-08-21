@@ -1,9 +1,8 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 
+import { pageSeo } from "@/lib/seo";
 import { CabinDetailPage } from "@/components/cabins/CabinDetailPage";
 import { cabinTypes } from "@/components/cabins/cabins-data";
-
-const SITE_URL = "https://id-preview--aaae7898-8e56-433d-9dbd-cdc3c97aac11.lovable.app";
 
 export const Route = createFileRoute("/cabins/$cabinId")({
   loader: ({ params }) => {
@@ -11,27 +10,17 @@ export const Route = createFileRoute("/cabins/$cabinId")({
     if (!cabin) throw notFound();
     return { cabin };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
-      return {
-        meta: [{ title: "Unavailable" }, { name: "robots", content: "noindex" }],
-      };
+      return { meta: [{ title: "Không tìm thấy phòng | Chronos Cruise" }, { name: "robots", content: "noindex" }] };
     }
     const { cabin } = loaderData;
-    const title = `${cabin.nameEn} | Chronos Cruise`;
-    const desc = cabin.descEn.slice(0, 155);
-    return {
-      meta: [
-        { title },
-        { name: "description", content: desc },
-        { property: "og:title", content: title },
-        { property: "og:description", content: desc },
-        { property: "og:type", content: "website" },
-        { property: "og:image", content: `${SITE_URL}${cabin.hero}` },
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:image", content: `${SITE_URL}${cabin.hero}` },
-      ],
-    };
+    return pageSeo({
+      title: `${cabin.nameEn} | Chronos Cruise`,
+      description: cabin.descEn.slice(0, 155),
+      path: `/cabins/${params.cabinId}`,
+      image: cabin.hero,
+    });
   },
   component: CabinDetailRoute,
 });

@@ -1,17 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 
+import { pageSeo } from "@/lib/seo";
 import { CareersPage } from "@/components/careers/CareersPage";
 
 export const Route = createFileRoute("/careers")({
-  head: () => ({
-    meta: [
-      { title: "Careers — Chronos Cruise" },
-      { name: "description", content: "Join the Chronos Cruise team. Explore open positions and contact us directly via Zalo or email." },
-      { property: "og:title", content: "Careers — Chronos Cruise" },
-      { property: "og:description", content: "Join the Chronos Cruise team. Explore open positions and contact us directly via Zalo or email." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () =>
+    pageSeo({
+      title: "Tuyển dụng | Chronos Cruise - Cơ hội nghề nghiệp trên du thuyền 6 sao",
+      description:
+        "Gia nhập đội ngũ Chronos Cruise. Xem các vị trí đang tuyển và ứng tuyển trực tiếp qua Zalo hoặc email.",
+      path: "/careers",
+    }),
   component: CareersPage,
 });

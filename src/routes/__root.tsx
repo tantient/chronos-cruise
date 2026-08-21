@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE_NAME, SITE_URL } from "@/lib/seo";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider, themeInitScript } from "@/components/theme-provider";
 
@@ -85,13 +86,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Chronos Cruise - trải nghiệm du thuyền 6 sao tại vịnh Hạ Long và Lan Hạ. Phòng nghỉ hướng biển, nhà hàng Panorama, spa và dịch vụ đẳng cấp.",
       },
-      { name: "author", content: "Chronos Cruise" },
-      { property: "og:title", content: "Chronos Cruise | Du thuyền 6 sao Hạ Long - Lan Hạ" },
-      {
-        property: "og:description",
-        content:
-          "Chronos Cruise - trải nghiệm du thuyền 6 sao tại vịnh Hạ Long và Lan Hạ. Phòng nghỉ hướng biển, nhà hàng Panorama, spa và dịch vụ đẳng cấp.",
-      },
+      { name: "author", content: SITE_NAME },
+      { name: "theme-color", content: "#8b7355" },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:locale", content: "vi_VN" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@chronoscruise" },
@@ -108,8 +106,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap",
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_URL,
+          logo: `${SITE_URL}/favicon.png`,
+          description:
+            "Chronos Cruise - du thuyền 6 sao trên vịnh Hạ Long và Lan Hạ với phòng nghỉ hướng biển, nhà hàng, spa và dịch vụ đẳng cấp.",
+        }),
+      },
     ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
