@@ -1,8 +1,6 @@
 import stackedSrc from "@/assets/logo/chronos-stacked.svg?raw";
-import stackedPlainSrc from "@/assets/logo/chronos-stacked-plain.svg?raw";
 import markSrc from "@/assets/logo/chronos-mark.svg?raw";
 import wordmarkSrc from "@/assets/logo/chronos-wordmark.svg?raw";
-import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.svg?raw";
 
 type LogoVariant = "inline" | "stacked";
 type LogoSize = "sm" | "md" | "lg";
@@ -48,23 +46,29 @@ const SIZE_CLASSES: Record<LogoVariant, Record<LogoSize, string>> = {
   },
 };
 
-/** Bỏ khai báo XML và ép SVG co theo chiều cao phần tử cha. */
-function prepare(raw: string): string {
-  return raw
+/**
+ * Bỏ khai báo XML, ép SVG co theo chiều cao phần tử cha.
+ * `viewBox` tuỳ chọn dùng để cắt phần tagline (biến thể "plain"),
+ * nhờ đó chỉ cần một file cho cả hai biến thể.
+ */
+function prepare(raw: string, viewBox?: string): string {
+  let out = raw
     .replace(/<\?xml[^>]*\?>/i, "")
     .replace(
       /<svg\b/i,
       '<svg preserveAspectRatio="xMidYMid meet" height="100%" width="auto" focusable="false" aria-hidden="true"',
     )
     .trim();
+  if (viewBox) out = out.replace(/viewBox="[^"]*"/i, `viewBox="${viewBox}"`);
+  return out;
 }
 
 const SVG = {
   stacked: prepare(stackedSrc),
-  stackedPlain: prepare(stackedPlainSrc),
+  stackedPlain: prepare(stackedSrc, "90 151 920 575"),
   mark: prepare(markSrc),
   wordmark: prepare(wordmarkSrc),
-  wordmarkPlain: prepare(wordmarkPlainSrc),
+  wordmarkPlain: prepare(wordmarkSrc, "69 109 920 104"),
 };
 
 /** Wrapper cho SVG nội tuyến: giữ nét ở mọi kích thước, ăn màu currentColor. */
