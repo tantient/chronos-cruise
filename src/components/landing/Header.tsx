@@ -58,8 +58,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
   ];
 
   const linkClasses = scrolled
-    ? "text-zenova-ink/75 hover:text-zenova-ink"
+    ? "text-zenova-sand-900/75 hover:text-zenova-sand-900"
     : "text-zenova-ivory/90 hover:text-zenova-ivory";
+
+  const scrolledText = scrolled ? "text-zenova-sand-900" : "text-zenova-ivory";
 
   const dropdownLinkClasses =
     "block rounded-sm px-3 py-2 transition-colors hover:bg-zenova-ink/5";
