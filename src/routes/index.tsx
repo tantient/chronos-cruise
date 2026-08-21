@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
       ...seo,
       links: [
         ...seo.links,
-        { rel: "preload", as: "image", href: slide1, fetchpriority: "high" },
+        { rel: "preload", as: "image", href: slide1, fetchPriority: "high" },
       ],
     };
   },
