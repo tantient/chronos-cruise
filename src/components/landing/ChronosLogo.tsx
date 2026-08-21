@@ -1,79 +1,63 @@
+import stackedSrc from "@/assets/logo/chronos-stacked.png";
+import stackedPlainSrc from "@/assets/logo/chronos-stacked-plain.png";
+import markSrc from "@/assets/logo/chronos-mark.png";
+import wordmarkSrc from "@/assets/logo/chronos-wordmark.png";
+import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.png";
+
 interface ChronosLogoProps extends React.HTMLAttributes<HTMLSpanElement> {
   className?: string;
-  /** stacked = mark trên, chữ dưới (footer) | inline = mark bên trái (header) */
+  /** stacked = khối trên, chữ dưới | inline = khối bên trái, chữ bên phải */
   variant?: "inline" | "stacked";
   showTagline?: boolean;
 }
 
-/**
- * Logo Chronos Cruise dựng vector: Hòn Trống (hình thang vuông) + Hòn Mái
- * (tam giác vuông) trên hai vạch thủy ba, ẩn chữ K. Dùng currentColor nên
- * tự đổi màu theo ngữ cảnh.
- */
+const RATIO = {
+  stacked: 1748 / 1200,
+  stackedPlain: 1748 / 1090,
+  mark: 1621 / 1200,
+  wordmark: 6906 / 1200,
+  wordmarkPlain: 6906 / 766,
+};
+
+/** Mask hoá logo gốc để tự đổi màu theo currentColor. */
+function maskStyle(src: string, ratio: number): React.CSSProperties {
+  return {
+    WebkitMaskImage: `url(${src})`,
+    maskImage: `url(${src})`,
+    WebkitMaskRepeat: "no-repeat",
+    maskRepeat: "no-repeat",
+    WebkitMaskPosition: "center",
+    maskPosition: "center",
+    WebkitMaskSize: "contain",
+    maskSize: "contain",
+    backgroundColor: "currentColor",
+    aspectRatio: `${ratio}`,
+  };
+}
+
 export function ChronosLogo({
   className,
   variant = "inline",
   showTagline = true,
   ...rest
 }: ChronosLogoProps) {
-  const mark = (
-    <svg
-      viewBox="0 0 120 104"
-      className={variant === "inline" ? "h-full w-auto shrink-0" : "h-[58%] w-auto"}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth={2.4}
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      {/* Hòn Trống: khối thang bo góc, rộng dưới hẹp trên */}
-      <path d="M13 4 L59 2 L64 80 L2 80 Z" />
-      {/* Hòn Mái: tam giác nghiêng, đỉnh hướng lên phải */}
-      <path d="M114 3 L66 25 L93 79 Z" />
-      {/* Thủy ba */}
-      <path d="M0 89 H120" />
-      <path d="M13 100 H105" />
-    </svg>
-  );
-
-  const wordmark = (
-    <span
-      className={
-        variant === "inline"
-          ? "flex flex-col justify-center leading-none"
-          : "flex flex-col items-center leading-none"
-      }
-    >
-      <span className="flex items-baseline gap-[0.5em] whitespace-nowrap">
-        <span className="font-display text-[1.5em] tracking-[0.16em] leading-none">
-          CHRONOS
-        </span>
-        <span className="font-body text-[0.72em] tracking-[0.34em] leading-none">
-          CRUISE
-        </span>
-      </span>
-      {showTagline && (
-        <span className="font-body mt-[0.42em] text-[0.44em] tracking-[0.3em] whitespace-nowrap opacity-70">
-          HA LONG BAY · LAN HA BAY
-        </span>
-      )}
-    </span>
-  );
-
   if (variant === "stacked") {
+    const src = showTagline ? stackedSrc : stackedPlainSrc;
+    const ratio = showTagline ? RATIO.stacked : RATIO.stackedPlain;
     return (
-      <span className={`flex flex-col items-center gap-[0.5em] ${className ?? ""}`} {...rest}>
-        {mark}
-        {wordmark}
+      <span className={`inline-flex ${className ?? ""}`} {...rest}>
+        <span className="h-full" style={maskStyle(src, ratio)} />
       </span>
     );
   }
 
+  const wordSrc = showTagline ? wordmarkSrc : wordmarkPlainSrc;
+  const wordRatio = showTagline ? RATIO.wordmark : RATIO.wordmarkPlain;
+
   return (
-    <span className={`flex items-center gap-[0.62em] ${className ?? ""}`} {...rest}>
-      {mark}
-      {wordmark}
+    <span className={`inline-flex items-center gap-[0.5em] ${className ?? ""}`} {...rest}>
+      <span className="h-full" style={maskStyle(markSrc, RATIO.mark)} />
+      <span className="h-[62%]" style={maskStyle(wordSrc, wordRatio)} />
     </span>
   );
 }
