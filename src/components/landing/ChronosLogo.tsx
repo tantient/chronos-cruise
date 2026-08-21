@@ -1,8 +1,8 @@
-import stackedSrc from "@/assets/logo/chronos-stacked.svg";
-import stackedPlainSrc from "@/assets/logo/chronos-stacked-plain.svg";
-import markSrc from "@/assets/logo/chronos-mark.svg";
-import wordmarkSrc from "@/assets/logo/chronos-wordmark.svg";
-import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.svg";
+import stackedSrc from "@/assets/logo/chronos-stacked.svg?raw";
+import stackedPlainSrc from "@/assets/logo/chronos-stacked-plain.svg?raw";
+import markSrc from "@/assets/logo/chronos-mark.svg?raw";
+import wordmarkSrc from "@/assets/logo/chronos-wordmark.svg?raw";
+import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.svg?raw";
 
 type LogoVariant = "inline" | "stacked";
 type LogoSize = "sm" | "md" | "lg";
@@ -34,14 +34,6 @@ interface ChronosLogoProps extends React.HTMLAttributes<HTMLSpanElement> {
   tone?: LogoTone;
 }
 
-const RATIO = {
-  stacked: 920 / 632,
-  stackedPlain: 920 / 575,
-  mark: 574 / 425,
-  wordmark: 920 / 161,
-  wordmarkPlain: 920 / 104,
-};
-
 /** Chiều cao chuẩn (mobile → desktop) cho từng biến thể. */
 const SIZE_CLASSES: Record<LogoVariant, Record<LogoSize, string>> = {
   inline: {
@@ -56,22 +48,33 @@ const SIZE_CLASSES: Record<LogoVariant, Record<LogoSize, string>> = {
   },
 };
 
-/** Mask hoá logo gốc để tự đổi màu theo currentColor. */
-function maskStyle(src: string, ratio: number): React.CSSProperties {
-  return {
-    WebkitMaskImage: `url("${src}")`,
-    maskImage: `url("${src}")`,
-    WebkitMaskRepeat: "no-repeat",
-    maskRepeat: "no-repeat",
-    WebkitMaskPosition: "center",
-    maskPosition: "center",
-    WebkitMaskSize: "contain",
-    maskSize: "contain",
-    backgroundColor: "currentColor",
-    aspectRatio: `${ratio}`,
-    width: "auto",
-    flex: "none",
-  };
+/** Bỏ khai báo XML và ép SVG co theo chiều cao phần tử cha. */
+function prepare(raw: string): string {
+  return raw
+    .replace(/<\?xml[^>]*\?>/i, "")
+    .replace(
+      /<svg\b/i,
+      '<svg preserveAspectRatio="xMidYMid meet" height="100%" width="auto" focusable="false" aria-hidden="true"',
+    )
+    .trim();
+}
+
+const SVG = {
+  stacked: prepare(stackedSrc),
+  stackedPlain: prepare(stackedPlainSrc),
+  mark: prepare(markSrc),
+  wordmark: prepare(wordmarkSrc),
+  wordmarkPlain: prepare(wordmarkPlainSrc),
+};
+
+/** Wrapper cho SVG nội tuyến: giữ nét ở mọi kích thước, ăn màu currentColor. */
+function InlineSvg({ markup, className }: { markup: string; className?: string }) {
+  return (
+    <span
+      className={`block shrink-0 [&>svg]:block [&>svg]:h-full [&>svg]:w-auto ${className ?? ""}`}
+      dangerouslySetInnerHTML={{ __html: markup }}
+    />
+  );
 }
 
 export function ChronosLogo({
@@ -89,21 +92,19 @@ export function ChronosLogo({
   const base = `inline-flex max-w-full shrink-0 select-none items-center align-middle transition-colors duration-300 ${sizeClass} ${toneClass}`;
 
   if (variant === "stacked") {
-    const src = showTagline ? stackedSrc : stackedPlainSrc;
-    const ratio = showTagline ? RATIO.stacked : RATIO.stackedPlain;
     return (
       <span
         className={`${base} justify-center ${className ?? ""}`}
         role="img"
         {...rest}
       >
-        <span className="h-full" style={maskStyle(src, ratio)} />
+        <InlineSvg
+          markup={showTagline ? SVG.stacked : SVG.stackedPlain}
+          className="h-full"
+        />
       </span>
     );
   }
-
-  const wordSrc = showTagline ? wordmarkSrc : wordmarkPlainSrc;
-  const wordRatio = showTagline ? RATIO.wordmark : RATIO.wordmarkPlain;
 
   return (
     <span
@@ -111,8 +112,11 @@ export function ChronosLogo({
       role="img"
       {...rest}
     >
-      <span className="h-full" style={maskStyle(markSrc, RATIO.mark)} />
-      <span className="h-[62%]" style={maskStyle(wordSrc, wordRatio)} />
+      <InlineSvg markup={SVG.mark} className="h-full" />
+      <InlineSvg
+        markup={showTagline ? SVG.wordmark : SVG.wordmarkPlain}
+        className="h-[62%]"
+      />
     </span>
   );
 }
