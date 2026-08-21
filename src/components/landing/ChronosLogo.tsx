@@ -61,11 +61,14 @@ export function ChronosLogo({
   variant = "inline",
   showTagline = true,
   size = "md",
+  tone = "auto",
   ...rest
 }: ChronosLogoProps) {
   const hasCustomHeight = /(^|\s)(h-|max-h-)/.test(className ?? "");
+  const hasCustomColor = /(^|\s)text-/.test(className ?? "");
   const sizeClass = hasCustomHeight ? "" : SIZE_CLASSES[variant][size];
-  const base = `inline-flex max-w-full shrink-0 select-none items-center align-middle ${sizeClass}`;
+  const toneClass = hasCustomColor ? "" : TONE_CLASSES[tone];
+  const base = `inline-flex max-w-full shrink-0 select-none items-center align-middle transition-colors duration-300 ${sizeClass} ${toneClass}`;
 
   if (variant === "stacked") {
     const src = showTagline ? stackedSrc : stackedPlainSrc;
