@@ -59,8 +59,8 @@ const SIZE_CLASSES: Record<LogoVariant, Record<LogoSize, string>> = {
 /** Mask hoá logo gốc để tự đổi màu theo currentColor. */
 function maskStyle(src: string, ratio: number): React.CSSProperties {
   return {
-    WebkitMaskImage: `url(${src})`,
-    maskImage: `url(${src})`,
+    WebkitMaskImage: `url("${src}")`,
+    maskImage: `url("${src}")`,
     WebkitMaskRepeat: "no-repeat",
     maskRepeat: "no-repeat",
     WebkitMaskPosition: "center",
