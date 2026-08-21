@@ -423,7 +423,8 @@ const translations: Record<Lang, Translations> = {
     },
     recruitTeaser: {
       label: "CAREERS",
-      title: "Join the Zenova crew",
+      title: "Craft",
+      titleAccent: "Heritage Journeys",
       subtitle: "The cruise is launching soon and we are looking for dedicated people to join our operations team.",
       name: "Full name",
       contact: "Phone / Email",
