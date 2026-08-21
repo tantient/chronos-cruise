@@ -84,6 +84,7 @@ export interface Translations {
   recruitTeaser: {
     label: string;
     title: string;
+    titleAccent: string;
     subtitle: string;
     name: string;
     contact: string;
