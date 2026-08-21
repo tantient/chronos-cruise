@@ -254,7 +254,8 @@ const translations: Record<Lang, Translations> = {
     },
     recruitTeaser: {
       label: "TUYỂN DỤNG",
-      title: "Gia nhập đội ngũ Zenova",
+      title: "Kiến tạo",
+      titleAccent: "Hành trình di sản",
       subtitle: "Tàu sắp ra mắt và chúng tôi đang tìm những con người tận tâm cho đội ngũ vận hành.",
       name: "Họ tên",
       contact: "Số điện thoại / Email",
