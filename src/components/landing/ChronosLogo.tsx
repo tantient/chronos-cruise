@@ -1,8 +1,6 @@
 import stackedSrc from "@/assets/logo/chronos-stacked.svg?raw";
-import stackedPlainSrc from "@/assets/logo/chronos-stacked-plain.svg?raw";
 import markSrc from "@/assets/logo/chronos-mark.svg?raw";
 import wordmarkSrc from "@/assets/logo/chronos-wordmark.svg?raw";
-import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.svg?raw";
 
 type LogoVariant = "inline" | "stacked";
 type LogoSize = "sm" | "md" | "lg";
