@@ -44,7 +44,8 @@ export function Footer({ t }: FooterProps) {
           <ChronosLogo
             variant="stacked"
             showTagline={false}
-            className="h-24 text-[16px] text-chronos-sand-900"
+            size="md"
+            className="text-chronos-sand-900"
             aria-label="Chronos Cruise"
           />
 

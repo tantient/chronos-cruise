@@ -78,7 +78,8 @@ export function Header({ lang, setLang, t }: HeaderProps) {
         <Link to="/" className="flex items-center">
           <ChronosLogo
             showTagline={false}
-            className={`h-8 text-[13px] transition-colors ${scrolled ? "text-chronos-sand-900" : "text-chronos-ivory"}`}
+            size="md"
+            className={`transition-colors ${scrolled ? "text-chronos-sand-900" : "text-chronos-ivory"}`}
             aria-label="Chronos Cruise"
           />
         </Link>
