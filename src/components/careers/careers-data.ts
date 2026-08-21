@@ -1,5 +1,5 @@
 import type { Lang } from "@/lib/translations";
-import heroImg from "@/assets/gallery/zenova-exterior-01.jpg";
+import heroImg from "@/assets/gallery/chronos-exterior-01.jpg";
 
 export interface JobPosition {
   id: string;
@@ -14,7 +14,7 @@ export interface JobPosition {
 }
 
 export const ZALO_PHONE = "0979768969";
-export const RECRUIT_EMAIL = "hr@zenovacruise.com";
+export const RECRUIT_EMAIL = "hr@chronoscruise.com";
 export const CAREER_HERO = heroImg;
 
 export const jobPositions: JobPosition[] = [
@@ -26,8 +26,8 @@ export const jobPositions: JobPosition[] = [
     departmentEn: "Housekeeping",
     typeVi: "Toàn thời gian",
     typeEn: "Full-time",
-    descVi: "Đảm bảo vệ sinh, sắp xếp và chuẩn bị các suite theo tiêu chuẩn 6 sao của Zenova.",
-    descEn: "Maintain cleanliness, order, and preparation of suites to Zenova's six-star standards.",
+    descVi: "Đảm bảo vệ sinh, sắp xếp và chuẩn bị các suite theo tiêu chuẩn 6 sao của Chronos.",
+    descEn: "Maintain cleanliness, order, and preparation of suites to Chronos's six-star standards.",
   },
   {
     id: "fb-server",
@@ -69,6 +69,6 @@ export function buildZaloLink(phone: string): string {
 }
 
 export function buildEmailLink(email: string, lang: Lang = "en"): string {
-  const subject = lang === "vi" ? "Ứng tuyển Zenova" : "Application to Zenova";
+  const subject = lang === "vi" ? "Ứng tuyển Chronos" : "Application to Chronos";
   return `mailto:${email}?subject=${encodeURIComponent(subject)}`;
 }

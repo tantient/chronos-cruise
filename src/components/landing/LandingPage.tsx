@@ -12,7 +12,7 @@ export function LandingPage() {
   const { lang, setLang, t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-zenova-ivory">
+    <div className="min-h-screen bg-chronos-ivory">
       <Header lang={lang} setLang={setLang} t={t} />
       <main>
         <Hero t={t} />

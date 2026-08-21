@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { AboutPage } from "@/components/about/AboutPage";
-import heroAsset from "@/assets/gallery/zenova-exterior-01.jpg";
+import heroAsset from "@/assets/gallery/chronos-exterior-01.jpg";
 
 const SITE_URL = "https://id-preview--aaae7898-8e56-433d-9dbd-cdc3c97aac11.lovable.app";
-const TITLE = "Giới thiệu Zenova Cruise | Du thuyền 6 sao Hạ Long - Lan Hạ";
+const TITLE = "Giới thiệu Chronos Cruise | Du thuyền 6 sao Hạ Long - Lan Hạ";
 const DESC =
-  "Tìm hiểu về Zenova Cruise: tinh thần phục vụ, giá trị cốt lõi và trải nghiệm nghỉ dưỡng 6 sao giữa vịnh Hạ Long - Lan Hạ.";
+  "Tìm hiểu về Chronos Cruise: tinh thần phục vụ, giá trị cốt lõi và trải nghiệm nghỉ dưỡng 6 sao giữa vịnh Hạ Long - Lan Hạ.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

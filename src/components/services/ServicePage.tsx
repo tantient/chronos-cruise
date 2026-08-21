@@ -24,7 +24,7 @@ export function ServicePage({ service }: { service: Service }) {
   const others = services.filter((s) => s.id !== service.id);
 
   return (
-    <div className="min-h-screen bg-zenova-ivory">
+    <div className="min-h-screen bg-chronos-ivory">
       <Header lang={lang} setLang={setLang} t={t} />
 
       <main>
@@ -36,16 +36,16 @@ export function ServicePage({ service }: { service: Service }) {
               className="h-full w-full object-cover"
             />
           ) : null}
-          <div className="absolute inset-0 bg-gradient-to-t from-zenova-ink/85 via-zenova-ink/30 to-zenova-ink/40" />
+          <div className="absolute inset-0 bg-gradient-to-t from-chronos-ink/85 via-chronos-ink/30 to-chronos-ink/40" />
           <div className="absolute inset-0 flex items-end">
             <div className="mx-auto w-full max-w-7xl px-6 pb-16 lg:px-8">
-              <p className="eyebrow mb-5 text-zenova-gold">
+              <p className="eyebrow mb-5 text-chronos-gold">
                 {vi ? service.eyebrowVi : service.eyebrowEn}
               </p>
-              <h1 className="max-w-3xl text-4xl tracking-[0.02em] text-zenova-ivory sm:text-5xl">
+              <h1 className="max-w-3xl text-4xl tracking-[0.02em] text-chronos-ivory sm:text-5xl">
                 {vi ? service.nameVi : service.nameEn}
               </h1>
-              <p className="mt-4 max-w-xl text-zenova-ivory/85">
+              <p className="mt-4 max-w-xl text-chronos-ivory/85">
                 {vi ? service.taglineVi : service.taglineEn}
               </p>
             </div>
@@ -54,20 +54,20 @@ export function ServicePage({ service }: { service: Service }) {
 
         <div className="mx-auto max-w-7xl space-y-20 px-6 py-20 lg:px-8 lg:py-28">
           <Reveal className="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
-            <p className="text-lg leading-relaxed text-zenova-stone/90">
+            <p className="text-lg leading-relaxed text-chronos-stone/90">
               {vi ? service.introVi : service.introEn}
             </p>
-            <div className="border-l border-zenova-ink/10 pl-8">
-              <p className="eyebrow mb-4 text-zenova-gold">
+            <div className="border-l border-chronos-ink/10 pl-8">
+              <p className="eyebrow mb-4 text-chronos-gold">
                 {vi ? "ĐIỂM NỔI BẬT" : "HIGHLIGHTS"}
               </p>
               <ul className="space-y-5">
                 {service.highlights.map((h) => (
                   <li key={h.titleEn}>
-                    <p className="text-sm font-semibold tracking-wide text-zenova-ink">
+                    <p className="text-sm font-semibold tracking-wide text-chronos-ink">
                       {vi ? h.titleVi : h.titleEn}
                     </p>
-                    <p className="mt-1 text-sm text-zenova-stone/80">
+                    <p className="mt-1 text-sm text-chronos-stone/80">
                       {vi ? h.descVi : h.descEn}
                     </p>
                   </li>
@@ -78,7 +78,7 @@ export function ServicePage({ service }: { service: Service }) {
 
           {rest.length > 0 ? (
             <Reveal>
-              <p className="eyebrow mb-6 text-zenova-gold">
+              <p className="eyebrow mb-6 text-chronos-gold">
                 {vi ? "HÌNH ẢNH" : "GALLERY"}
               </p>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -86,7 +86,7 @@ export function ServicePage({ service }: { service: Service }) {
                   <button
                     key={img.id}
                     onClick={() => setActive(i)}
-                    className="group relative overflow-hidden rounded-sm bg-zenova-ink/5 text-left"
+                    className="group relative overflow-hidden rounded-sm bg-chronos-ink/5 text-left"
                   >
                     <img
                       src={img.src}
@@ -94,27 +94,27 @@ export function ServicePage({ service }: { service: Service }) {
                       loading="lazy"
                       className="aspect-[16/10] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zenova-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-chronos-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                   </button>
                 ))}
               </div>
             </Reveal>
           ) : null}
 
-          <Reveal className="flex flex-col items-start gap-6 border-t border-zenova-ink/10 pt-12 sm:flex-row sm:items-center sm:justify-between">
+          <Reveal className="flex flex-col items-start gap-6 border-t border-chronos-ink/10 pt-12 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <p className="text-lg text-zenova-ink">
+              <p className="text-lg text-chronos-ink">
                 {vi ? "Quan tâm đến dịch vụ này?" : "Interested in this experience?"}
               </p>
-              <p className="mt-1 text-sm text-zenova-stone/80">
+              <p className="mt-1 text-sm text-chronos-stone/80">
                 {vi
-                  ? "Đội ngũ Zenova sẽ tư vấn hành trình phù hợp trong 24 giờ."
-                  : "The Zenova team will tailor an itinerary within 24 hours."}
+                  ? "Đội ngũ Chronos sẽ tư vấn hành trình phù hợp trong 24 giờ."
+                  : "The Chronos team will tailor an itinerary within 24 hours."}
               </p>
             </div>
             <Button
               asChild
-              className="btn-sheen rounded-none bg-zenova-gold text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ink hover:bg-zenova-gold/90"
+              className="btn-sheen rounded-none bg-chronos-gold text-xs font-semibold uppercase tracking-[0.18em] text-chronos-ink hover:bg-chronos-gold/90"
             >
               <a href={QUOTE_LINK} target="_blank" rel="noopener noreferrer">
                 {t.nav.quote}
@@ -123,7 +123,7 @@ export function ServicePage({ service }: { service: Service }) {
           </Reveal>
 
           <Reveal>
-            <p className="eyebrow mb-6 text-zenova-gold">
+            <p className="eyebrow mb-6 text-chronos-gold">
               {vi ? "DỊCH VỤ KHÁC" : "OTHER SERVICES"}
             </p>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -134,7 +134,7 @@ export function ServicePage({ service }: { service: Service }) {
                     key={s.id}
                     to="/services/$serviceId"
                     params={{ serviceId: s.id }}
-                    className="group relative overflow-hidden rounded-sm bg-zenova-ink/5"
+                    className="group relative overflow-hidden rounded-sm bg-chronos-ink/5"
                   >
                     {img ? (
                       <img
@@ -144,8 +144,8 @@ export function ServicePage({ service }: { service: Service }) {
                         className="aspect-[16/10] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                       />
                     ) : null}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zenova-ink/80 via-zenova-ink/10 to-transparent" />
-                    <span className="absolute bottom-4 left-5 text-sm tracking-wide text-zenova-ivory">
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-chronos-ink/80 via-chronos-ink/10 to-transparent" />
+                    <span className="absolute bottom-4 left-5 text-sm tracking-wide text-chronos-ivory">
                       {vi ? s.nameVi : s.nameEn}
                     </span>
                   </Link>

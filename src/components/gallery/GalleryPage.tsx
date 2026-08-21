@@ -31,19 +31,19 @@ export function GalleryPage() {
   );
 
   return (
-    <div className="min-h-screen bg-zenova-ivory">
+    <div className="min-h-screen bg-chronos-ivory">
       <Header lang={lang} setLang={setLang} t={t} />
 
       <main className="pt-32 pb-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <Reveal className="mb-12 max-w-2xl">
-            <p className="eyebrow mb-6 text-zenova-gold">
+            <p className="eyebrow mb-6 text-chronos-gold">
               {lang === "vi" ? "THƯ VIỆN" : "GALLERY"}
             </p>
-            <h1 className="mb-4 text-4xl tracking-[0.02em] text-zenova-ink sm:text-5xl">
-              {lang === "vi" ? "Zenova qua từng góc nhìn" : "Zenova in every view"}
+            <h1 className="mb-4 text-4xl tracking-[0.02em] text-chronos-ink sm:text-5xl">
+              {lang === "vi" ? "Chronos qua từng góc nhìn" : "Chronos in every view"}
             </h1>
-            <p className="text-zenova-stone/85">
+            <p className="text-chronos-stone/85">
               {lang === "vi"
                 ? "Toàn bộ không gian trên du thuyền: ngoại thất, nhà hàng, giải trí, spa và phòng nghỉ."
                 : "Every space aboard: exterior, dining, entertainment, spa and cabins."}
@@ -60,8 +60,8 @@ export function GalleryPage() {
                 }}
                 className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] transition-colors ${
                   filter === c.id
-                    ? "border-zenova-ink bg-zenova-ink text-zenova-ivory"
-                    : "border-zenova-ink/15 text-zenova-ink/70 hover:border-zenova-ink/40 hover:text-zenova-ink"
+                    ? "border-chronos-ink bg-chronos-ink text-chronos-ivory"
+                    : "border-chronos-ink/15 text-chronos-ink/70 hover:border-chronos-ink/40 hover:text-chronos-ink"
                 }`}
               >
                 {lang === "vi" ? c.vi : c.en}
@@ -74,7 +74,7 @@ export function GalleryPage() {
               <button
                 key={img.id}
                 onClick={() => setActive(i)}
-                className="group relative overflow-hidden rounded-sm bg-zenova-ink/5 text-left"
+                className="group relative overflow-hidden rounded-sm bg-chronos-ink/5 text-left"
               >
                 <img
                   src={img.src}
@@ -82,8 +82,8 @@ export function GalleryPage() {
                   loading="lazy"
                   className="aspect-[16/10] w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zenova-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <span className="pointer-events-none absolute bottom-4 left-5 text-xs uppercase tracking-[0.24em] text-zenova-ivory opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-chronos-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <span className="pointer-events-none absolute bottom-4 left-5 text-xs uppercase tracking-[0.24em] text-chronos-ivory opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   {lang === "vi" ? img.titleVi : img.titleEn}
                 </span>
               </button>

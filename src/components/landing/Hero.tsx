@@ -7,10 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { HeroMedia, type HeroSlide } from "./HeroMedia";
 import { Reveal } from "./Reveal";
-import slide1 from "@/assets/zenova-slide-1.jpg";
-import slide2 from "@/assets/zenova-slide-2.jpg";
-import slide3 from "@/assets/zenova-slide-3.jpg";
-import slide4 from "@/assets/zenova-slide-4.jpg";
+import slide1 from "@/assets/chronos-slide-1.jpg";
+import slide2 from "@/assets/chronos-slide-2.jpg";
+import slide3 from "@/assets/chronos-slide-3.jpg";
+import slide4 from "@/assets/chronos-slide-4.jpg";
 
 interface HeroProps {
   t: {
@@ -32,9 +32,9 @@ interface HeroProps {
 }
 
 const SLIDES: HeroSlide[] = [
-  { url: slide1, alt: "Zenova Cruise trên vịnh Hạ Long lúc hoàng hôn" },
-  { url: slide2, alt: "Toàn cảnh du thuyền Zenova Cruise giữa vịnh" },
-  { url: slide3, alt: "Zenova Cruise nhìn từ trên cao" },
+  { url: slide1, alt: "Chronos Cruise trên vịnh Hạ Long lúc hoàng hôn" },
+  { url: slide2, alt: "Toàn cảnh du thuyền Chronos Cruise giữa vịnh" },
+  { url: slide3, alt: "Chronos Cruise nhìn từ trên cao" },
   { url: slide4, alt: "Sảnh đón khách và hồ bơi vô cực trên tàu" },
 ];
 
@@ -58,19 +58,19 @@ export function Hero({ t }: HeroProps) {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(to bottom, rgba(0,0,0,0.40) 0%, transparent 40%, transparent 60%, var(--color-zenova-ivory) 100%)",
+            "linear-gradient(to bottom, rgba(0,0,0,0.40) 0%, transparent 40%, transparent 60%, var(--color-chronos-ivory) 100%)",
         }}
       />
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6 text-center lg:px-8">
         <Reveal immediate delay={100}>
-          <span className="mb-6 inline-block text-xs font-semibold uppercase tracking-[0.5em] text-zenova-sand-300 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
+          <span className="mb-6 inline-block text-xs font-semibold uppercase tracking-[0.5em] text-chronos-sand-300 drop-shadow-[0_1px_8px_rgba(0,0,0,0.8)]">
             {t.hero.tagline}
           </span>
         </Reveal>
         <Reveal immediate delay={260}>
           <h1 className="mb-8 text-5xl font-normal tracking-tight text-white drop-shadow-xl sm:text-6xl md:text-7xl lg:text-8xl font-display">
-            {t.hero.title} <span className="font-display italic text-zenova-sand-300">{t.hero.titleAccent}</span>
+            {t.hero.title} <span className="font-display italic text-chronos-sand-300">{t.hero.titleAccent}</span>
           </h1>
         </Reveal>
         <Reveal immediate delay={420}>
@@ -95,7 +95,7 @@ export function Hero({ t }: HeroProps) {
               />
               <button
                 type="submit"
-                className="rounded-full bg-zenova-sand-500 px-8 py-3 text-xs font-medium uppercase tracking-[0.15em] text-white transition-all duration-500 hover:bg-zenova-sand-700"
+                className="rounded-full bg-chronos-sand-500 px-8 py-3 text-xs font-medium uppercase tracking-[0.15em] text-white transition-all duration-500 hover:bg-chronos-sand-700"
               >
                 {t.hero.cta}
               </button>
@@ -105,7 +105,7 @@ export function Hero({ t }: HeroProps) {
           <Reveal
             immediate
             delay={200}
-            className="mx-auto max-w-md rounded-full border border-zenova-sand-300/30 bg-white/10 px-8 py-4 backdrop-blur-sm"
+            className="mx-auto max-w-md rounded-full border border-chronos-sand-300/30 bg-white/10 px-8 py-4 backdrop-blur-sm"
           >
             <p className="text-sm text-white">{t.earlyAccess.success}</p>
           </Reveal>

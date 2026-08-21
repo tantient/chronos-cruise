@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { OffersPage } from "@/components/offers/OffersPage";
-import heroAsset from "@/assets/gallery/zenova-public-pool.jpg";
+import heroAsset from "@/assets/gallery/chronos-public-pool.jpg";
 
 const SITE_URL = "https://id-preview--aaae7898-8e56-433d-9dbd-cdc3c97aac11.lovable.app";
-const TITLE = "Ưu đãi Zenova Cruise | Gói nghỉ dưỡng & khuyến mãi du thuyền Hạ Long";
+const TITLE = "Ưu đãi Chronos Cruise | Gói nghỉ dưỡng & khuyến mãi du thuyền Hạ Long";
 const DESC =
-  "Các ưu đãi và gói đặc biệt trên Zenova Cruise: giảm giá mùa thấp điểm, ưu đãi gia đình, gói trăng mật và combo nghỉ dưỡng giữa vịnh Hạ Long.";
+  "Các ưu đãi và gói đặc biệt trên Chronos Cruise: giảm giá mùa thấp điểm, ưu đãi gia đình, gói trăng mật và combo nghỉ dưỡng giữa vịnh Hạ Long.";
 
 export const Route = createFileRoute("/offers")({
   head: () => ({

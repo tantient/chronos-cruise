@@ -5,7 +5,7 @@ import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { ZenovaLogo } from "./ZenovaLogo";
+import { ChronosLogo } from "./ChronosLogo";
 import { services } from "@/components/services/services-data";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import type { Lang } from "@/lib/translations";
@@ -58,28 +58,28 @@ export function Header({ lang, setLang, t }: HeaderProps) {
   ];
 
   const linkClasses = scrolled
-    ? "text-zenova-sand-900/75 hover:text-zenova-sand-900"
-    : "text-zenova-ivory/90 hover:text-zenova-ivory";
+    ? "text-chronos-sand-900/75 hover:text-chronos-sand-900"
+    : "text-chronos-ivory/90 hover:text-chronos-ivory";
 
-  const scrolledText = scrolled ? "text-zenova-sand-900" : "text-zenova-ivory";
+  const scrolledText = scrolled ? "text-chronos-sand-900" : "text-chronos-ivory";
 
   const dropdownLinkClasses =
-    "block rounded-sm px-3 py-2 transition-colors hover:bg-zenova-ink/5";
+    "block rounded-sm px-3 py-2 transition-colors hover:bg-chronos-ink/5";
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-zenova-ivory/95 shadow-sm backdrop-blur-md"
+          ? "bg-chronos-ivory/95 shadow-sm backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
         <Link to="/" className="flex items-center">
-          <ZenovaLogo
+          <ChronosLogo
             showTagline={false}
-            className={`h-8 text-[13px] transition-colors ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`}
-            aria-label="Zenova Cruise"
+            className={`h-8 text-[13px] transition-colors ${scrolled ? "text-chronos-sand-900" : "text-chronos-ivory"}`}
+            aria-label="Chronos Cruise"
           />
         </Link>
 
@@ -105,10 +105,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               <ChevronDown className="h-3.5 w-3.5" />
             </button>
             <div className="invisible absolute left-1/2 top-full z-50 w-[34rem] -translate-x-1/2 pt-4 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-              <div className="grid grid-cols-2 gap-2 rounded-sm border border-zenova-ink/10 bg-zenova-ivory/98 p-3 shadow-lg backdrop-blur-md">
+              <div className="grid grid-cols-2 gap-2 rounded-sm border border-chronos-ink/10 bg-chronos-ivory/98 p-3 shadow-lg backdrop-blur-md">
                 {serviceGroups.map((group) => (
                   <div key={group.title}>
-                    <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-[0.22em] text-zenova-ink/70">
+                    <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-[0.22em] text-chronos-ink/70">
                       {group.title}
                     </p>
                     {group.links.map((link) => (
@@ -118,10 +118,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
                         title={link.desc}
                         className={dropdownLinkClasses}
                       >
-                        <span className="block text-[12px] font-medium tracking-wide text-zenova-ink">
+                        <span className="block text-[12px] font-medium tracking-wide text-chronos-ink">
                           {link.label}
                         </span>
-                        <span className="mt-0.5 block text-xs leading-snug text-zenova-ink/75">
+                        <span className="mt-0.5 block text-xs leading-snug text-chronos-ink/75">
                           {link.desc}
                         </span>
                       </Link>
@@ -161,7 +161,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
         <div className="hidden items-center gap-3 md:flex">
           <div
             className={`flex items-center rounded-full border p-1 ${
-              scrolled ? "border-zenova-sand-900/20" : "border-zenova-ivory/30"
+              scrolled ? "border-chronos-sand-900/20" : "border-chronos-ivory/30"
             }`}
           >
             <button
@@ -169,11 +169,11 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                 lang === "vi"
                   ? scrolled
-                    ? "bg-zenova-sand-900 text-zenova-ivory"
-                    : "bg-zenova-ivory text-zenova-sand-900"
+                    ? "bg-chronos-sand-900 text-chronos-ivory"
+                    : "bg-chronos-ivory text-chronos-sand-900"
                   : scrolled
-                    ? "text-zenova-sand-900/70 hover:text-zenova-sand-900"
-                    : "text-zenova-ivory/80 hover:text-zenova-ivory"
+                    ? "text-chronos-sand-900/70 hover:text-chronos-sand-900"
+                    : "text-chronos-ivory/80 hover:text-chronos-ivory"
               }`}
               aria-label="Tiếng Việt"
             >
@@ -184,11 +184,11 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               className={`rounded-full px-3 py-1 text-xs font-semibold transition-colors ${
                 lang === "en"
                   ? scrolled
-                    ? "bg-zenova-sand-900 text-zenova-ivory"
-                    : "bg-zenova-ivory text-zenova-sand-900"
+                    ? "bg-chronos-sand-900 text-chronos-ivory"
+                    : "bg-chronos-ivory text-chronos-sand-900"
                   : scrolled
-                    ? "text-zenova-sand-900/70 hover:text-zenova-sand-900"
-                    : "text-zenova-ivory/80 hover:text-zenova-ivory"
+                    ? "text-chronos-sand-900/70 hover:text-chronos-sand-900"
+                    : "text-chronos-ivory/80 hover:text-chronos-ivory"
               }`}
               aria-label="English"
             >
@@ -199,12 +199,12 @@ export function Header({ lang, setLang, t }: HeaderProps) {
           <ThemeToggle
             className={
               scrolled
-                ? "border-zenova-sand-900/20 text-zenova-sand-900 hover:bg-zenova-sand-900/5"
-                : "border-zenova-ivory/30 text-zenova-ivory hover:bg-zenova-ivory/10"
+                ? "border-chronos-sand-900/20 text-chronos-sand-900 hover:bg-chronos-sand-900/5"
+                : "border-chronos-ivory/30 text-chronos-ivory hover:bg-chronos-ivory/10"
             }
           />
 
-          <Button asChild className="btn-sheen rounded-none bg-zenova-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ivory hover:bg-zenova-sand-700">
+          <Button asChild className="btn-sheen rounded-none bg-chronos-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-chronos-ivory hover:bg-chronos-sand-700">
             <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
               {t.nav.book}
             </a>
@@ -217,32 +217,32 @@ export function Header({ lang, setLang, t }: HeaderProps) {
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? (
-            <X className={`h-6 w-6 ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`} />
+            <X className={`h-6 w-6 ${scrolled ? "text-chronos-sand-900" : "text-chronos-ivory"}`} />
           ) : (
-            <Menu className={`h-6 w-6 ${scrolled ? "text-zenova-sand-900" : "text-zenova-ivory"}`} />
+            <Menu className={`h-6 w-6 ${scrolled ? "text-chronos-sand-900" : "text-chronos-ivory"}`} />
           )}
         </button>
       </div>
 
       {mobileOpen && (
-        <div className="border-t border-zenova-ink/10 bg-zenova-ivory/98 px-6 pb-6 xl:hidden">
+        <div className="border-t border-chronos-ink/10 bg-chronos-ivory/98 px-6 pb-6 xl:hidden">
           <nav className="flex flex-col gap-4 pt-4">
             {navLinks.slice(0, 4).map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium tracking-wide text-zenova-ink/80"
+                className="text-sm font-medium tracking-wide text-chronos-ink/80"
               >
                 {link.label}
               </Link>
             ))}
             {serviceGroups.map((group) => (
               <div key={group.title} className="pt-1">
-                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-zenova-ink/70">
+                <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-chronos-ink/70">
                   {group.title}
                 </p>
-                <div className="flex flex-col gap-3 border-l border-zenova-ink/10 pl-4">
+                <div className="flex flex-col gap-3 border-l border-chronos-ink/10 pl-4">
                   {group.links.map((link) => (
                     <Link
                       key={link.href}
@@ -250,10 +250,10 @@ export function Header({ lang, setLang, t }: HeaderProps) {
                       onClick={() => setMobileOpen(false)}
                       className="block"
                     >
-                      <span className="block text-sm tracking-wide text-zenova-ink/85">
+                      <span className="block text-sm tracking-wide text-chronos-ink/85">
                         {link.label}
                       </span>
-                      <span className="mt-0.5 block text-xs leading-snug text-zenova-ink/70">
+                      <span className="mt-0.5 block text-xs leading-snug text-chronos-ink/70">
                         {link.desc}
                       </span>
                     </Link>
@@ -266,7 +266,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
                 key={link.href}
                 to={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-medium tracking-wide text-zenova-ink/80"
+                className="text-sm font-medium tracking-wide text-chronos-ink/80"
               >
                 {link.label}
               </Link>
@@ -275,7 +275,7 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               <button
                 onClick={() => setLang("vi")}
                 className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                  lang === "vi" ? "bg-zenova-sand-900 text-zenova-ivory" : "text-zenova-sand-900/70"
+                  lang === "vi" ? "bg-chronos-sand-900 text-chronos-ivory" : "text-chronos-sand-900/70"
                 }`}
               >
                 VI
@@ -283,14 +283,14 @@ export function Header({ lang, setLang, t }: HeaderProps) {
               <button
                 onClick={() => setLang("en")}
                 className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                  lang === "en" ? "bg-zenova-sand-900 text-zenova-ivory" : "text-zenova-sand-900/70"
+                  lang === "en" ? "bg-chronos-sand-900 text-chronos-ivory" : "text-chronos-sand-900/70"
                 }`}
               >
                 EN
               </button>
-              <ThemeToggle className="border-zenova-sand-900/15 text-zenova-sand-900 hover:bg-zenova-sand-900/5" />
+              <ThemeToggle className="border-chronos-sand-900/15 text-chronos-sand-900 hover:bg-chronos-sand-900/5" />
             </div>
-            <Button asChild className="btn-sheen rounded-none bg-zenova-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-zenova-ivory hover:bg-zenova-sand-700">
+            <Button asChild className="btn-sheen rounded-none bg-chronos-sand-500 text-xs font-semibold uppercase tracking-[0.18em] text-chronos-ivory hover:bg-chronos-sand-700">
               <a href={BOOKING_LINK} target="_blank" rel="noopener noreferrer">
                 {t.nav.book}
               </a>

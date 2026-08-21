@@ -1,9 +1,9 @@
-import imgExterior1 from "@/assets/gallery/zenova-exterior-01.jpg";
-import imgExterior2 from "@/assets/gallery/zenova-exterior-02.jpg";
-import imgDeck from "@/assets/gallery/zenova-deck-sunset-01.jpg";
-import imgDining from "@/assets/gallery/zenova-dining-panorama-01.jpg";
-import imgSpa from "@/assets/gallery/zenova-spa-room-01.jpg";
-import imgCabin from "@/assets/gallery/zenova-suite-01.jpg";
+import imgExterior1 from "@/assets/gallery/chronos-exterior-01.jpg";
+import imgExterior2 from "@/assets/gallery/chronos-exterior-02.jpg";
+import imgDeck from "@/assets/gallery/chronos-deck-sunset-01.jpg";
+import imgDining from "@/assets/gallery/chronos-dining-panorama-01.jpg";
+import imgSpa from "@/assets/gallery/chronos-spa-room-01.jpg";
+import imgCabin from "@/assets/gallery/chronos-suite-01.jpg";
 
 export interface Itinerary {
   id: string;
@@ -33,9 +33,9 @@ export const itineraries: Itinerary[] = [
     durationVi: "2 ngày 1 đêm",
     durationEn: "2 days / 1 night",
     descVi:
-      "Hành trình giới thiệu đầy đủ về Zenova: chiêm ngưỡng vịnh Hạ Long từ boong tàu, tham quan hang động và ăn tối dưới ánh nến giữa vịnh.",
+      "Hành trình giới thiệu đầy đủ về Chronos: chiêm ngưỡng vịnh Hạ Long từ boong tàu, tham quan hang động và ăn tối dưới ánh nến giữa vịnh.",
     descEn:
-      "A complete introduction to Zenova: take in Ha Long Bay from the decks, explore a cave and enjoy dinner by candlelight on the water.",
+      "A complete introduction to Chronos: take in Ha Long Bay from the decks, explore a cave and enjoy dinner by candlelight on the water.",
     hero: imgExterior1,
     images: [imgDining, imgCabin, imgDeck],
     includesVi: [

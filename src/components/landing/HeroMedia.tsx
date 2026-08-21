@@ -99,8 +99,8 @@ export function HeroMedia({ slides, video, intervalMs = 6000 }: HeroMediaProps) 
               aria-current={i === index}
               className={`h-px transition-all duration-700 ${
                 i === index
-                  ? "w-14 bg-zenova-gold"
-                  : "w-7 bg-zenova-ivory/40 hover:bg-zenova-ivory/70"
+                  ? "w-14 bg-chronos-gold"
+                  : "w-7 bg-chronos-ivory/40 hover:bg-chronos-ivory/70"
               }`}
             />
           ))}

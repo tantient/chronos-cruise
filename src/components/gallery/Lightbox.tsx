@@ -35,18 +35,18 @@ export function Lightbox({ images, index, setIndex, close, lang }: LightboxProps
 
   return (
     <div
-      className="fixed inset-0 z-[60] flex items-center justify-center bg-zenova-ink/95 p-4"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-chronos-ink/95 p-4"
       onClick={close}
     >
       <button
-        className="absolute right-5 top-5 text-zenova-ivory/80 hover:text-zenova-ivory"
+        className="absolute right-5 top-5 text-chronos-ivory/80 hover:text-chronos-ivory"
         onClick={close}
         aria-label="Close"
       >
         <X className="h-7 w-7" />
       </button>
       <button
-        className="absolute left-4 text-zenova-ivory/70 hover:text-zenova-ivory"
+        className="absolute left-4 text-chronos-ivory/70 hover:text-chronos-ivory"
         onClick={(e) => {
           e.stopPropagation();
           setIndex((i) => (i === null ? i : (i - 1 + count) % count));
@@ -61,12 +61,12 @@ export function Lightbox({ images, index, setIndex, close, lang }: LightboxProps
           alt={label}
           className="max-h-[80vh] w-auto rounded-sm object-contain"
         />
-        <figcaption className="mt-3 text-center text-xs uppercase tracking-[0.24em] text-zenova-ivory/70">
+        <figcaption className="mt-3 text-center text-xs uppercase tracking-[0.24em] text-chronos-ivory/70">
           {label} · {index + 1}/{count}
         </figcaption>
       </figure>
       <button
-        className="absolute right-4 text-zenova-ivory/70 hover:text-zenova-ivory"
+        className="absolute right-4 text-chronos-ivory/70 hover:text-chronos-ivory"
         onClick={(e) => {
           e.stopPropagation();
           setIndex((i) => (i === null ? i : (i + 1) % count));

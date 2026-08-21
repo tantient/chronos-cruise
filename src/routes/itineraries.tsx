@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ItinerariesPage } from "@/components/itineraries/ItinerariesPage";
-import heroAsset from "@/assets/gallery/zenova-exterior-02.jpg";
+import heroAsset from "@/assets/gallery/chronos-exterior-02.jpg";
 
 const SITE_URL = "https://id-preview--aaae7898-8e56-433d-9dbd-cdc3c97aac11.lovable.app";
-const TITLE = "Hải trình Zenova Cruise | 2N1Đ & 3N2Đ Hạ Long - Lan Hạ";
+const TITLE = "Hải trình Chronos Cruise | 2N1Đ & 3N2Đ Hạ Long - Lan Hạ";
 const DESC =
-  "Các hải trình du thuyền 6 sao Zenova: 2 ngày 1 đêm, 3 ngày 2 đêm và chuyến đi ngắn ngắm hoàng hôn giữa vịnh Hạ Long - Lan Hạ.";
+  "Các hải trình du thuyền 6 sao Chronos: 2 ngày 1 đêm, 3 ngày 2 đêm và chuyến đi ngắn ngắm hoàng hôn giữa vịnh Hạ Long - Lan Hạ.";
 
 export const Route = createFileRoute("/itineraries")({
   head: () => ({

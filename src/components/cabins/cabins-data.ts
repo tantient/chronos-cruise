@@ -1,15 +1,15 @@
-import suite01 from "@/assets/gallery/zenova-suite-01.jpg";
-import suite02 from "@/assets/gallery/zenova-suite-02.jpg";
-import suite03 from "@/assets/gallery/zenova-suite-03.jpg";
-import deluxe01 from "@/assets/gallery/zenova-deluxe-01.jpg";
-import deluxe02 from "@/assets/gallery/zenova-deluxe-02.jpg";
-import standard01 from "@/assets/gallery/zenova-standard-01.jpg";
-import standard02 from "@/assets/gallery/zenova-standard-02.jpg";
-import standard03 from "@/assets/gallery/zenova-standard-03.jpg";
-import standard04 from "@/assets/gallery/zenova-standard-04.jpg";
-import bath01 from "@/assets/gallery/zenova-bath-01.jpg";
-import bath02 from "@/assets/gallery/zenova-bath-02.jpg";
-import corridor from "@/assets/gallery/zenova-corridor.jpg";
+import suite01 from "@/assets/gallery/chronos-suite-01.jpg";
+import suite02 from "@/assets/gallery/chronos-suite-02.jpg";
+import suite03 from "@/assets/gallery/chronos-suite-03.jpg";
+import deluxe01 from "@/assets/gallery/chronos-deluxe-01.jpg";
+import deluxe02 from "@/assets/gallery/chronos-deluxe-02.jpg";
+import standard01 from "@/assets/gallery/chronos-standard-01.jpg";
+import standard02 from "@/assets/gallery/chronos-standard-02.jpg";
+import standard03 from "@/assets/gallery/chronos-standard-03.jpg";
+import standard04 from "@/assets/gallery/chronos-standard-04.jpg";
+import bath01 from "@/assets/gallery/chronos-bath-01.jpg";
+import bath02 from "@/assets/gallery/chronos-bath-02.jpg";
+import corridor from "@/assets/gallery/chronos-corridor.jpg";
 
 export const TOTAL_CABINS = 44;
 
@@ -181,9 +181,9 @@ export const cabinTypes: CabinType[] = [
     nameVi: "Junior Suite (loại B)",
     nameEn: "Junior Suite (type B)",
     descVi:
-      "Thiết kế tối giản, tận dụng tối đa ánh sáng tự nhiên với đầy đủ tiện nghi tiêu chuẩn Zenova. Lựa chọn phổ biến nhất trên tàu.",
+      "Thiết kế tối giản, tận dụng tối đa ánh sáng tự nhiên với đầy đủ tiện nghi tiêu chuẩn Chronos. Lựa chọn phổ biến nhất trên tàu.",
     descEn:
-      "A minimal design that makes the most of natural light, with the full set of Zenova standard amenities. The most common cabin aboard.",
+      "A minimal design that makes the most of natural light, with the full set of Chronos standard amenities. The most common cabin aboard.",
     area: "30 – 35 m²",
     view: "Hướng biển / Sea view",
     roomCount: 25,
