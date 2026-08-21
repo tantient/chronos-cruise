@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import heroAsset from "@/assets/gallery/chronos-exterior-01.jpg";
+import heroAsset from "@/assets/gallery/chronos-exterior-01.webp";
 
 const PHONE = "+84 902 000 000";
 const PHONE_TEL = "+84902000000";

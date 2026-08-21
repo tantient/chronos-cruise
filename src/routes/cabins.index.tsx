@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { pageSeo } from "@/lib/seo";
 
 import { CabinsPage } from "@/components/cabins/CabinsPage";
-import heroAsset from "@/assets/gallery/chronos-suite-01.jpg";
+import heroAsset from "@/assets/gallery/chronos-suite-01.webp";
 
 const TITLE = "Phòng nghỉ Chronos Cruise | Suite & cabin hướng vịnh";
 const DESC =

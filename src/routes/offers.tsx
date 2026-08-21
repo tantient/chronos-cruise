@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { pageSeo } from "@/lib/seo";
 
 import { OffersPage } from "@/components/offers/OffersPage";
-import heroAsset from "@/assets/gallery/chronos-public-pool.jpg";
+import heroAsset from "@/assets/gallery/chronos-public-pool.webp";
 
 const TITLE = "Ưu đãi Chronos Cruise | Gói nghỉ dưỡng & khuyến mãi du thuyền Hạ Long";
 const DESC =

@@ -7,10 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { HeroMedia, type HeroSlide } from "./HeroMedia";
 import { Reveal } from "./Reveal";
-import slide1 from "@/assets/chronos-slide-1.jpg";
-import slide2 from "@/assets/chronos-slide-2.jpg";
-import slide3 from "@/assets/chronos-slide-3.jpg";
-import slide4 from "@/assets/chronos-slide-4.jpg";
+import slide1 from "@/assets/chronos-slide-1.webp";
+import slide2 from "@/assets/chronos-slide-2.webp";
+import slide3 from "@/assets/chronos-slide-3.webp";
+import slide4 from "@/assets/chronos-slide-4.webp";
 
 interface HeroProps {
   t: {

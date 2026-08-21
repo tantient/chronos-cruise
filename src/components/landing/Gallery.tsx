@@ -1,8 +1,8 @@
 import { Link } from "@tanstack/react-router";
 
-import gallerySuite from "@/assets/gallery/chronos-suite-02.jpg";
-import galleryDining from "@/assets/gallery/chronos-dining-panorama-01.jpg";
-import gallerySundeck from "@/assets/gallery/chronos-public-pool.jpg";
+import gallerySuite from "@/assets/gallery/chronos-suite-02.webp";
+import galleryDining from "@/assets/gallery/chronos-dining-panorama-01.webp";
+import gallerySundeck from "@/assets/gallery/chronos-public-pool.webp";
 
 import { Reveal } from "./Reveal";
 

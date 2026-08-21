@@ -1,9 +1,9 @@
-import imgExterior1 from "@/assets/gallery/chronos-exterior-01.jpg";
-import imgExterior2 from "@/assets/gallery/chronos-exterior-02.jpg";
-import imgDeck from "@/assets/gallery/chronos-deck-sunset-01.jpg";
-import imgDining from "@/assets/gallery/chronos-dining-panorama-01.jpg";
-import imgSpa from "@/assets/gallery/chronos-spa-room-01.jpg";
-import imgCabin from "@/assets/gallery/chronos-suite-01.jpg";
+import imgExterior1 from "@/assets/gallery/chronos-exterior-01.webp";
+import imgExterior2 from "@/assets/gallery/chronos-exterior-02.webp";
+import imgDeck from "@/assets/gallery/chronos-deck-sunset-01.webp";
+import imgDining from "@/assets/gallery/chronos-dining-panorama-01.webp";
+import imgSpa from "@/assets/gallery/chronos-spa-room-01.webp";
+import imgCabin from "@/assets/gallery/chronos-suite-01.webp";
 
 export interface Itinerary {
   id: string;
