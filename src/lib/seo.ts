@@ -12,7 +12,7 @@ type PageSeoInput = {
   /** Route path, e.g. "/gallery" */
   path: string;
   /** Optional hero image (imported asset path or absolute URL). */
-  image?: string;
+  image?: string | undefined;
   type?: "website" | "article" | "product";
 };
 
