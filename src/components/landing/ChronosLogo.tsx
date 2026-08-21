@@ -6,6 +6,22 @@ import wordmarkPlainSrc from "@/assets/logo/chronos-wordmark-plain.png";
 
 type LogoVariant = "inline" | "stacked";
 type LogoSize = "sm" | "md" | "lg";
+/**
+ * auto    = theo chế độ sáng/tối (mực trên nền sáng, ngà trên nền tối)
+ * onLight = ép màu mực (dùng trên nền sáng cố định)
+ * onDark  = ép màu ngà (dùng trên ảnh/nền tối cố định)
+ * gold    = màu vàng thương hiệu
+ * inherit = kế thừa currentColor của phần tử cha
+ */
+type LogoTone = "auto" | "onLight" | "onDark" | "gold" | "inherit";
+
+const TONE_CLASSES: Record<LogoTone, string> = {
+  auto: "text-chronos-sand-900 dark:text-chronos-ivory",
+  onLight: "text-chronos-sand-900",
+  onDark: "text-chronos-ivory drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)]",
+  gold: "text-chronos-gold-ink dark:text-chronos-gold",
+  inherit: "",
+};
 
 interface ChronosLogoProps extends React.HTMLAttributes<HTMLSpanElement> {
   className?: string;
@@ -14,6 +30,8 @@ interface ChronosLogoProps extends React.HTMLAttributes<HTMLSpanElement> {
   showTagline?: boolean;
   /** Kích thước chuẩn, tự co giãn theo breakpoint. Bỏ qua nếu tự truyền class h-* */
   size?: LogoSize;
+  /** Cách logo lấy màu để luôn tương phản với nền */
+  tone?: LogoTone;
 }
 
 const RATIO = {
